@@ -1,0 +1,85 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/grid",
+  "version": "0.1.0",
+  "title": "BW Grid",
+  "category": "kriti-blocks",
+  "icon": "grid-view",
+  "description": "CSS grid layout container for arranging blocks in rows and columns.",
+  "example": {},
+  "keywords": [
+    "grid",
+    "columns",
+    "layout"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "tagType": {
+      "type": "string",
+      "default": "div"
+    },
+    "gridColumns": {
+      "type": "number",
+      "default": 2
+    },
+    "gridColumnGap": {
+      "type": "number",
+      "default": 20
+    },
+    "gridRowGap": {
+      "type": "number",
+      "default": 20
+    },
+    "minHeight": {
+      "type": "string",
+      "default": ""
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    },
+    "colsTablet": {
+      "type": "number"
+    },
+    "colsMobile": {
+      "type": "number"
+    },
+    "autoFitMin": {
+      "type": "number"
+    },
+    "gridAlign": {
+      "type": "string",
+      "enum": [
+        "start",
+        "center",
+        "end"
+      ]
+    },
+    "gridJustify": {
+      "type": "string",
+      "enum": [
+        "start",
+        "center",
+        "end"
+      ]
+    },
+    "gridDense": {
+      "type": "boolean"
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

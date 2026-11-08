@@ -1,0 +1,133 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/heading",
+  "version": "0.1.0",
+  "title": "BW Heading",
+  "category": "kriti-blocks",
+  "icon": "heading",
+  "description": "A heading with full typography controls.",
+  "example": {},
+  "keywords": ["heading", "title", "h1", "h2", "h3"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "attributes": {
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": "h1,h2,h3,h4,h5,h6",
+      "default": ""
+    },
+    "kbDynamic": {
+      "type": "object"
+    },
+    "tagType": {
+      "type": "string",
+      "default": "h2"
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "fontSize": {
+      "type": "number",
+      "default": ""
+    },
+    "fontWeight": {
+      "type": "string",
+      "default": ""
+    },
+    "textAlign": {
+      "type": "string",
+      "default": ""
+    },
+    "textTransform": {
+      "type": "string",
+      "default": ""
+    },
+    "letterSpacing": {
+      "type": "string",
+      "default": ""
+    },
+    "lineHeight": {
+      "type": "string",
+      "default": ""
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    },
+    "fontFamily": {
+      "type": "string",
+      "enum": ["sans", "serif", "mono", "custom"]
+    },
+    "fontFamilyCustom": {
+      "type": "string"
+    },
+    "textShadow": {
+      "type": "string",
+      "enum": ["soft", "medium", "strong", "glow"]
+    },
+    "textDecoration": {
+      "type": "string",
+      "enum": ["underline", "line-through"]
+    },
+    "decorationStyle": {
+      "type": "string",
+      "enum": ["solid", "dotted", "dashed", "wavy"]
+    },
+    "decorationColor": {
+      "type": "string"
+    },
+    "gradientFrom": {
+      "type": "string"
+    },
+    "gradientTo": {
+      "type": "string"
+    },
+    "gradientAngle": {
+      "type": "number"
+    },
+    "highlightColor": {
+      "type": "string"
+    },
+    "accentBar": {
+      "type": "boolean"
+    },
+    "barAlign": {
+      "type": "string",
+      "enum": ["left", "center", "right"]
+    },
+    "barColor": {
+      "type": "string"
+    },
+    "barWidth": {
+      "type": "number"
+    },
+    "barHeight": {
+      "type": "number"
+    },
+    "subheading": {
+      "type": "string",
+      "source": "html",
+      "selector": ".kb-heading-sub"
+    },
+    "showSubheading": {
+      "type": "boolean"
+    },
+    "subheadingPosition": {
+      "type": "string",
+      "enum": ["below", "above"]
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

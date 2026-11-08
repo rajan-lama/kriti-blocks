@@ -1,0 +1,105 @@
+.wp-block-kriti-blocks-back-to-top {
+	--bw-btt-size: 48px;
+	--bw-btt-icon-size: 20px;
+	--bw-btt-bg: #4f46e5;
+	--bw-btt-color: #fff;
+	--bw-btt-radius: 50%;
+
+	display: none;
+
+	&.bw-btt--js {
+		display: block;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.25s ease, visibility 0.25s ease;
+	}
+
+	&.bw-btt--visible {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.bw-btt__button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: var( --bw-btt-size );
+		height: var( --bw-btt-size );
+		padding: 0;
+		background-color: var( --bw-btt-bg );
+		border: var( --bw-btt-border-w, 0 ) solid var( --bw-btt-border-c, currentColor );
+		border-radius: var( --bw-btt-radius );
+		box-shadow: 0 2px 8px rgba( 0, 0, 0, 0.2 );
+		color: var( --bw-btt-color );
+		cursor: pointer;
+		transition: background-color 0.2s ease, color 0.2s ease;
+
+		&:hover,
+		&:focus-visible {
+			background-color: var( --bw-btt-hover-bg, var( --bw-btt-bg ) );
+			color: var( --bw-btt-hover-color, var( --bw-btt-color ) );
+		}
+
+		svg:not( .bw-btt__ring ) {
+			width: var( --bw-btt-icon-size );
+			height: var( --bw-btt-icon-size );
+			fill: currentColor;
+		}
+
+		&:focus-visible {
+			outline: 2px solid var( --bw-btt-bg );
+			outline-offset: 2px;
+		}
+	}
+
+	&.bw-btt--shadow-none .bw-btt__button {
+		box-shadow: none;
+	}
+
+	&.bw-btt--shadow-large .bw-btt__button {
+		box-shadow: 0 8px 24px rgba( 0, 0, 0, 0.3 );
+	}
+
+	// Text label next to the icon.
+	&.bw-btt--has-label .bw-btt__button {
+		width: auto;
+		min-width: var( --bw-btt-size );
+		gap: 8px;
+		padding: 0 16px;
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 1;
+	}
+
+	// Scroll progress ring drawn around the button.
+	&.bw-btt--progress .bw-btt__button {
+		position: relative;
+	}
+
+	.bw-btt__ring {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		fill: none;
+		pointer-events: none;
+		transform: rotate( -90deg );
+		stroke-width: 2.5;
+
+		circle {
+			fill: none;
+		}
+	}
+
+	.bw-btt__ring-track {
+		stroke: currentColor;
+		opacity: 0.25;
+	}
+
+	.bw-btt__ring-bar {
+		stroke: var( --bw-btt-ring, currentColor );
+		stroke-dasharray: 138.23;
+		stroke-dashoffset: 138.23;
+		stroke-linecap: round;
+	}
+}

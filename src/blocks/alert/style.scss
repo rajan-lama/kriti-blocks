@@ -1,0 +1,82 @@
+.bw-alert {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.75em;
+	padding: 1em 1.25em;
+	border-radius: 6px;
+	border-left: 4px solid;
+	margin-bottom: 1.5em;
+
+	.bw-alert-icon {
+		flex-shrink: 0;
+		display: inline-flex;
+		margin-top: 1px;
+		color: var( --kb-alert-accent, currentColor );
+
+		svg {
+			width: var( --kb-alert-icon, 20px );
+			height: var( --kb-alert-icon, 20px );
+		}
+	}
+
+	.bw-alert-content {
+		flex: 1;
+		margin: 0;
+	}
+
+	&--info {
+		background: #eff6ff;
+		border-left-color: var( --kb-alert-accent, #3b82f6 );
+		color: #1e3a8a;
+	}
+
+	&--success {
+		background: #ecfdf5;
+		border-left-color: var( --kb-alert-accent, #10b981 );
+		color: #065f46;
+	}
+
+	&--warning {
+		background: #fffbeb;
+		border-left-color: var( --kb-alert-accent, #f59e0b );
+		color: #92400e;
+	}
+
+	&--error {
+		background: #fef2f2;
+		border-left-color: var( --kb-alert-accent, #ef4444 );
+		color: #991b1b;
+	}
+
+	.bw-alert-body {
+		flex: 1;
+		min-width: 0;
+
+		.bw-alert-content {
+			flex: none;
+		}
+	}
+
+	.bw-alert-title {
+		margin: 0 0 0.25em;
+		font-weight: 700;
+	}
+
+	.bw-alert-dismiss {
+		flex-shrink: 0;
+		margin: -0.25em -0.5em 0 auto;
+		padding: 0 0.4em;
+		border: 0;
+		background: none;
+		color: inherit;
+		font-size: 1.5em;
+		line-height: 1;
+		cursor: pointer;
+		opacity: 0.6;
+
+		&:hover,
+		&:focus-visible {
+			opacity: 1;
+		}
+	}
+}

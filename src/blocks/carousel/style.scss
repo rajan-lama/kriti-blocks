@@ -1,0 +1,218 @@
+// Optional carousel options. Each rule only applies when its class is present.
+.wp-block-kriti-blocks-carousel,
+.carousel {
+  &.kb-carousel--speed .carousel-item {
+    transition-duration: var(--kb-car-speed);
+  }
+
+  &.kb-carousel--img-h .carousel-item img,
+  &.kb-carousel--img-h .kb-carousel__slide img {
+    display: block;
+    width: 100%;
+    height: var(--kb-car-h);
+    object-fit: var(--kb-car-fit, cover);
+  }
+
+  &.kb-carousel--dark {
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      filter: invert(1) grayscale(100);
+    }
+
+    .carousel-indicators [data-bs-target] {
+      background-color: #000;
+    }
+  }
+
+  &.kb-carousel--cap-left .carousel-caption {
+    text-align: left;
+  }
+
+  &.kb-carousel--cap-right .carousel-caption {
+    text-align: right;
+  }
+}
+
+.carousel {
+  // Thumbnail strip: Bootstrap marks the active thumbnail itself.
+  .carousel-indicators.kb-carousel-thumbs {
+    position: static;
+    display: flex;
+    gap: 8px;
+    margin: 8px 0 0;
+    padding: 0;
+    justify-content: center;
+
+    button {
+      flex: 0 0 auto;
+      width: 72px;
+      height: 48px;
+      padding: 0;
+      border: 2px solid transparent;
+      background: none;
+      opacity: 0.6;
+      text-indent: 0;
+
+      &.active {
+        border-color: #4f46e5;
+        opacity: 1;
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // Vertical slide direction: swap the horizontal transforms for vertical ones.
+  &.kb-carousel--vertical {
+    .carousel-item-next:not(.carousel-item-start),
+    .active.carousel-item-end {
+      transform: translateY(100%);
+    }
+
+    .carousel-item-prev:not(.carousel-item-end),
+    .active.carousel-item-start {
+      transform: translateY(-100%);
+    }
+  }
+}
+
+// More than one slide per view: a scrolling track instead of Bootstrap's carousel.
+.kb-carousel--multi {
+  --kb-car-cols: var(--kb-car-cols-d, 2);
+  --kb-car-gap: 16px;
+  position: relative;
+
+  .kb-carousel__viewport {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+  }
+
+  .kb-carousel__track {
+    display: flex;
+    gap: var(--kb-car-gap);
+  }
+
+  .kb-carousel__slide {
+    position: relative;
+    flex: 0 0
+      calc(
+        (100% - (var(--kb-car-cols) - 1) * var(--kb-car-gap)) /
+          var(--kb-car-cols)
+      );
+    min-width: 0;
+    scroll-snap-align: start;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &.kb-carousel--img-h .kb-carousel__slide img {
+    height: var(--kb-car-h);
+    object-fit: var(--kb-car-fit, cover);
+  }
+
+  // Controls need JavaScript, so they stay hidden without it.
+  .kb-carousel__arrow,
+  .kb-carousel__dots {
+    display: none;
+  }
+
+  &.kb-carousel--js {
+    .kb-carousel__arrow {
+      position: absolute;
+      top: 50%;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      transform: translateY(-50%);
+      border: 0;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.55);
+      color: #fff;
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+
+      &:disabled {
+        opacity: 0.3;
+        cursor: default;
+      }
+    }
+
+    .kb-carousel__arrow--prev {
+      left: 8px;
+    }
+
+    .kb-carousel__arrow--next {
+      right: 8px;
+    }
+
+    .kb-carousel__dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .kb-carousel__dot {
+      width: 10px;
+      height: 10px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: currentColor;
+      opacity: 0.3;
+      cursor: pointer;
+
+      &.is-active {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.kb-carousel--dark .kb-carousel__arrow {
+    background: rgba(255, 255, 255, 0.8);
+    color: #000;
+  }
+
+  @media (max-width: 1024px) {
+    --kb-car-cols: var(--kb-car-cols-t, 2);
+  }
+
+  @media (max-width: 600px) {
+    --kb-car-cols: var(--kb-car-cols-m, 1);
+  }
+}
+
+// Per-slide overlay between the image and the caption.
+.carousel-item.kb-slide--overlay,
+.kb-carousel__slide.kb-slide--overlay {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: var(--kb-slide-overlay);
+    opacity: var(--kb-slide-overlay-o, 0.4);
+    pointer-events: none;
+  }
+
+  .carousel-caption {
+    z-index: 2;
+  }
+}

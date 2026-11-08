@@ -1,0 +1,70 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/list",
+  "version": "0.1.0",
+  "title": "BW List",
+  "category": "kriti-blocks",
+  "icon": "editor-ul",
+  "description": "A styled list with custom check, arrow, disc, dash, or numbered markers.",
+  "example": {},
+  "keywords": ["list", "bullet", "checklist", "features", "items"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "attributes": {
+    "items": {
+      "type": "array",
+      "default": [
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    "markerStyle": {
+      "type": "string",
+      "default": "check"
+    },
+    "markerColor": {
+      "type": "string",
+      "default": ""
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    },
+    "numberStart": {
+      "type": "number"
+    },
+    "markerSize": {
+      "type": "number"
+    },
+    "itemGap": {
+      "type": "number"
+    },
+    "columns": {
+      "type": "number"
+    },
+    "dividers": {
+      "type": "boolean"
+    },
+    "dividerColor": {
+      "type": "string"
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

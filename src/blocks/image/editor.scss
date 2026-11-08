@@ -1,0 +1,21 @@
+.wp-block-kriti-blocks-image {
+	margin-left: 0;
+	margin-right: 0;
+
+	&.bw-image-placeholder {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 160px;
+		border: 1px dashed #1e1e1e26;
+		background: #f6f7f7;
+		cursor: pointer;
+	}
+
+	img.bw-image {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+	}
+}

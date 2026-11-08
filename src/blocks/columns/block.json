@@ -1,0 +1,190 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/columns",
+  "version": "0.1.0",
+  "title": "BW Columns",
+  "category": "kriti-blocks",
+  "icon": "columns",
+  "description": "Bootstrap-like column block",
+  "example": {},
+  "keywords": ["columns"],
+  "supports": {
+    "background": {
+      "backgroundImage": true,
+      "backgroundSize": true
+    },
+    "dimensions": {
+      "aspectRatio": true,
+      "height": true,
+      "minHeight": true,
+      "width": true
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true,
+      "blockGap": true
+    },
+    "shadow": true,
+    "html": false,
+    "color": {
+      "background": true,
+      "gradient": true,
+      "text": false,
+      "enableContrastChecker": false
+    }
+  },
+  "attributes": {
+    "layout": {
+      "type": "string",
+      "default": "layout-none"
+    },
+    "width": {
+      "type": "string"
+    },
+    "contentAlign": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "customTextColor": {
+      "type": "string"
+    },
+    "verticalAlignment": {
+      "type": "string"
+    },
+    "tagType": {
+      "type": "string",
+      "default": ""
+    },
+    "container": {
+      "type": "string",
+      "default": "container"
+    },
+    "paddingY": {
+      "type": "string",
+      "default": "py-0"
+    },
+    "background": {
+      "type": "string",
+      "default": "none"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "backgroundImage": {
+      "type": "array",
+      "source": "query",
+      "selector": "img",
+      "query": {
+        "url": {
+          "type": "string",
+          "source": "attribute",
+          "attribute": "src"
+        },
+        "alt": {
+          "type": "string",
+          "source": "attribute",
+          "attribute": "alt"
+        }
+      }
+    },
+    "borderStyle": {
+      "type": "string",
+      "default": "solid"
+    },
+    "border": {
+      "type": "array"
+    },
+    "customMargin": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "top": {
+            "value": 0,
+            "unit": "px"
+          },
+          "right": {
+            "value": 15,
+            "unit": "px"
+          },
+          "bottom": {
+            "value": 0,
+            "unit": "px"
+          },
+          "left": {
+            "value": 15,
+            "unit": "px"
+          }
+        },
+        "tablet": {
+          "top": {
+            "value": 0,
+            "unit": "px"
+          },
+          "right": {
+            "value": 15,
+            "unit": "px"
+          },
+          "bottom": {
+            "value": 0,
+            "unit": "px"
+          },
+          "left": {
+            "value": 15,
+            "unit": "px"
+          }
+        },
+        "mobile": {
+          "top": {
+            "value": 0,
+            "unit": "px"
+          },
+          "right": {
+            "value": 15,
+            "unit": "px"
+          },
+          "bottom": {
+            "value": 0,
+            "unit": "px"
+          },
+          "left": {
+            "value": 15,
+            "unit": "px"
+          }
+        }
+      }
+    },
+    "rowAlign": {
+      "type": "string",
+      "enum": ["start", "center", "end"]
+    },
+    "rowJustify": {
+      "type": "string",
+      "enum": ["center", "end", "between", "around"]
+    },
+    "rowReverse": {
+      "type": "boolean"
+    },
+    "stackOn": {
+      "type": "string",
+      "enum": ["tablet", "mobile"]
+    },
+    "stackReverse": {
+      "type": "boolean"
+    },
+    "colGap": {
+      "type": "number"
+    },
+    "rowGapY": {
+      "type": "number"
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "parent": ["kriti-blocks/section"]
+}

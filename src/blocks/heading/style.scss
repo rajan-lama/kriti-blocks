@@ -1,0 +1,55 @@
+.wp-block-kriti-blocks-heading {
+	margin-top: 0;
+}
+
+// Optional effects. Each only applies when its class is present.
+.wp-block-kriti-blocks-heading {
+	&.kb-h--gradient {
+		background-image: linear-gradient(
+			var( --kb-h-gangle, 90deg ),
+			var( --kb-h-g1 ),
+			var( --kb-h-g2 )
+		);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		color: transparent;
+	}
+
+	&.kb-h--hl {
+		text-decoration: underline;
+		text-decoration-color: var( --kb-h-hl );
+		text-decoration-thickness: 0.4em;
+		text-underline-offset: -0.2em;
+		text-decoration-skip-ink: none;
+	}
+
+	&.kb-h--bar::after {
+		content: '';
+		display: block;
+		width: var( --kb-h-bar-w, 60px );
+		height: var( --kb-h-bar-h, 4px );
+		margin-top: 0.4em;
+		background: var( --kb-h-bar-color, #4f46e5 );
+		border-radius: 2px;
+	}
+
+	&.kb-h--bar-center::after {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&.kb-h--bar-right::after {
+		margin-left: auto;
+	}
+}
+
+.wp-block-kriti-blocks-heading .kb-heading-sub {
+	margin: 0.25em 0 0;
+	opacity: 0.8;
+}
+
+.wp-block-kriti-blocks-heading > :first-child:not( h1, h2, h3, h4, h5, h6 ) {
+	margin-top: 0;
+	margin-bottom: 0.25em;
+}

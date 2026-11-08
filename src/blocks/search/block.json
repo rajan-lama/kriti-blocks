@@ -1,0 +1,103 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/search",
+  "version": "0.1.0",
+  "title": "BW Search",
+  "category": "kriti-blocks",
+  "icon": "search",
+  "description": "A site search form with optional post type restriction.",
+  "example": {},
+  "keywords": ["search", "form", "query"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "attributes": {
+    "label": {
+      "type": "string",
+      "default": ""
+    },
+    "placeholder": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonText": {
+      "type": "string",
+      "default": ""
+    },
+    "showButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "layout": {
+      "type": "string",
+      "default": "inline"
+    },
+    "postType": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonStyle": {
+      "type": "string",
+      "default": "text"
+    },
+    "size": {
+      "type": "string",
+      "default": "md"
+    },
+    "maxWidth": {
+      "type": "number",
+      "default": 0
+    },
+    "fieldAlign": {
+      "type": "string",
+      "default": "left"
+    },
+    "fieldRadius": {
+      "type": "number",
+      "default": 8
+    },
+    "showCategoryFilter": {
+      "type": "boolean",
+      "default": false
+    },
+    "categoryLabel": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonBg": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonColor": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonHoverBg": {
+      "type": "string",
+      "default": ""
+    },
+    "inputBorder": {
+      "type": "string",
+      "default": ""
+    },
+    "inputBg": {
+      "type": "string",
+      "default": ""
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

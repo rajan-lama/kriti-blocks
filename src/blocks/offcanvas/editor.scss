@@ -1,0 +1,32 @@
+.wp-block-kriti-blocks-offcanvas {
+	.bw-offcanvas__trigger {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 12px 24px;
+		background-color: var( --bw-oc-trigger-bg );
+		border-radius: 6px;
+		color: var( --bw-oc-trigger-color );
+		font-weight: 600;
+		cursor: default;
+	}
+
+	&.bw-offcanvas--no-trigger .bw-offcanvas__trigger {
+		display: inline-flex !important;
+		opacity: 0.5;
+	}
+
+	.bw-offcanvas__panel {
+		margin-top: 16px;
+		padding: 20px;
+		background-color: var( --bw-oc-panel-bg );
+		border: 1px dashed #1e1e1e26;
+		border-radius: 8px;
+	}
+
+	.bw-offcanvas__editor-note {
+		margin: 0 0 12px;
+		color: #757575;
+		font-style: italic;
+	}
+}

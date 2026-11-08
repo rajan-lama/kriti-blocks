@@ -1,0 +1,74 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/sticky-section",
+  "version": "0.1.0",
+  "title": "BW Sticky Section",
+  "category": "kriti-blocks",
+  "icon": "pin",
+  "description": "A container that sticks to the top of the viewport while scrolling.",
+  "example": {},
+  "keywords": [
+    "sticky",
+    "fixed",
+    "pin",
+    "section",
+    "header"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "stickyOffset": {
+      "type": "number",
+      "default": 0
+    },
+    "zIndex": {
+      "type": "number",
+      "default": 10
+    },
+    "showShadow": {
+      "type": "boolean",
+      "default": true
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    },
+    "disableOn": {
+      "type": "string",
+      "enum": [
+        "tablet",
+        "mobile"
+      ]
+    },
+    "stickTo": {
+      "type": "string",
+      "enum": [
+        "bottom"
+      ]
+    },
+    "stuckBackground": {
+      "type": "string"
+    },
+    "stuckPadding": {
+      "type": "number"
+    },
+    "hideOnScrollDown": {
+      "type": "boolean"
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

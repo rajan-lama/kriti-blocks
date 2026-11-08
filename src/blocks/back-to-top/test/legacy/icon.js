@@ -1,0 +1,13 @@
+/**
+ * Shared up-arrow icon for the Back To Top block.
+ */
+export const BackToTopIcon = (
+  <svg
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path d="M12 4 4 12h5v8h6v-8h5z" />
+  </svg>
+);

@@ -1,0 +1,114 @@
+.wp-block-kriti-blocks-pagination {
+	.bw-pagination__items {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px;
+		align-items: center;
+
+		.page-numbers {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			min-width: var( --bw-pg-size, 38px );
+			height: var( --bw-pg-size, 38px );
+			padding: 0 10px;
+			background-color: var( --bw-pg-bg, #fff );
+			border: 1px solid var( --bw-pg-border, #cbd5e1 );
+			border-radius: var( --bw-pg-radius, 8px );
+			color: var( --bw-pg-color, inherit );
+			text-decoration: none;
+
+			&:hover,
+			&:focus {
+				background-color: var( --bw-pg-hover-bg, var( --bw-pg-bg, #fff ) );
+				border-color: var( --bw-pg-hover-border, #1e293b );
+				color: var( --bw-pg-hover-color, var( --bw-pg-color, inherit ) );
+			}
+
+			&.current {
+				background-color: var( --bw-pg-current-bg, #1e293b );
+				border-color: var( --bw-pg-current-bg, #1e293b );
+				color: var( --bw-pg-current-color, #fff );
+			}
+
+			&.dots {
+				border-color: transparent;
+				background-color: transparent;
+			}
+		}
+	}
+
+	.bw-pagination__link {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: var( --bw-pg-size, 38px );
+		height: var( --bw-pg-size, 38px );
+		padding: 0 12px;
+		background-color: var( --bw-pg-bg, #fff );
+		border: 1px solid var( --bw-pg-border, #cbd5e1 );
+		border-radius: var( --bw-pg-radius, 8px );
+		color: var( --bw-pg-color, inherit );
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			background-color: var( --bw-pg-hover-bg, var( --bw-pg-bg, #fff ) );
+			border-color: var( --bw-pg-hover-border, #1e293b );
+			color: var( --bw-pg-hover-color, var( --bw-pg-color, inherit ) );
+		}
+	}
+
+	.bw-pagination__info {
+		margin-right: 6px;
+		color: var( --bw-pg-color, inherit );
+		font-size: 14px;
+		opacity: 0.8;
+	}
+
+	&.bw-pagination--center .bw-pagination__items {
+		justify-content: center;
+	}
+
+	&.bw-pagination--right .bw-pagination__items {
+		justify-content: flex-end;
+	}
+
+	/* Sizes. Medium is the default and has no modifier class. */
+	&.bw-pagination--size-sm {
+		--bw-pg-size: 32px;
+
+		font-size: 14px;
+	}
+
+	&.bw-pagination--size-lg {
+		--bw-pg-size: 46px;
+
+		font-size: 17px;
+	}
+
+	/* Styles. Outline is the default and has no modifier class. */
+	&.bw-pagination--style-solid {
+		--bw-pg-bg: #f1f5f9;
+		--bw-pg-border: transparent;
+	}
+
+	&.bw-pagination--style-pill {
+		--bw-pg-radius: 999px;
+	}
+
+	&.bw-pagination--style-minimal {
+		--bw-pg-bg: transparent;
+		--bw-pg-border: transparent;
+		--bw-pg-hover-border: transparent;
+		--bw-pg-hover-bg: #f1f5f9;
+		--bw-pg-current-bg: transparent;
+		--bw-pg-current-color: inherit;
+
+		.page-numbers.current {
+			border-bottom-color: currentcolor;
+			border-radius: 0;
+			font-weight: 700;
+		}
+	}
+}

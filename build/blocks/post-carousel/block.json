@@ -1,0 +1,176 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/post-carousel",
+  "version": "0.1.0",
+  "title": "BW Post Carousel",
+  "category": "kriti-blocks",
+  "icon": "slides",
+  "description": "A horizontal carousel of posts, pages, or public custom post types.",
+  "example": {},
+  "keywords": [
+    "carousel",
+    "slider",
+    "posts",
+    "latest"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "postType": {
+      "type": "string",
+      "default": "post"
+    },
+    "perPage": {
+      "type": "number",
+      "default": 6
+    },
+    "columns": {
+      "type": "number",
+      "default": 3
+    },
+    "orderBy": {
+      "type": "string",
+      "default": "date"
+    },
+    "order": {
+      "type": "string",
+      "default": "DESC"
+    },
+    "categoryIds": {
+      "type": "array",
+      "default": []
+    },
+    "showFeaturedImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "imageSize": {
+      "type": "string",
+      "default": "medium_large"
+    },
+    "showExcerpt": {
+      "type": "boolean",
+      "default": true
+    },
+    "excerptLength": {
+      "type": "number",
+      "default": 20
+    },
+    "showDate": {
+      "type": "boolean",
+      "default": true
+    },
+    "showAuthor": {
+      "type": "boolean",
+      "default": false
+    },
+    "showCategory": {
+      "type": "boolean",
+      "default": false
+    },
+    "readMoreText": {
+      "type": "string",
+      "default": ""
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": false
+    },
+    "interval": {
+      "type": "number",
+      "default": 5000
+    },
+    "showArrows": {
+      "type": "boolean",
+      "default": true
+    },
+    "showDots": {
+      "type": "boolean",
+      "default": true
+    },
+    "offset": {
+      "type": "number",
+      "default": 0
+    },
+    "includeIds": {
+      "type": "string",
+      "default": ""
+    },
+    "excludeIds": {
+      "type": "string",
+      "default": ""
+    },
+    "stickyPosts": {
+      "type": "string",
+      "default": "ignore"
+    },
+    "filterTaxonomy": {
+      "type": "string",
+      "default": ""
+    },
+    "filterTermIds": {
+      "type": "array",
+      "default": []
+    },
+    "cardStyle": {
+      "type": "string",
+      "default": "boxed"
+    },
+    "hoverEffect": {
+      "type": "string",
+      "default": "none"
+    },
+    "imageRatio": {
+      "type": "string",
+      "default": "default"
+    },
+    "titleTag": {
+      "type": "string",
+      "default": "h3"
+    },
+    "columnsTablet": {
+      "type": "number",
+      "default": 0
+    },
+    "columnsMobile": {
+      "type": "number",
+      "default": 0
+    },
+    "slideGap": {
+      "type": "number",
+      "default": 24
+    },
+    "showReadingTime": {
+      "type": "boolean",
+      "default": false
+    },
+    "showComments": {
+      "type": "boolean",
+      "default": false
+    },
+    "noResultsText": {
+      "type": "string",
+      "default": ""
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}

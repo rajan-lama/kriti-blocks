@@ -1,0 +1,76 @@
+.wp-block-kriti-blocks-timeline-item {
+	position: relative;
+	padding-left: 44px;
+	padding-bottom: 36px;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: calc( 16px - var( --kb-tl-marker, 12px ) / 2 );
+		left: calc( 12px - var( --kb-tl-marker, 12px ) / 2 );
+		width: var( --kb-tl-marker, 12px );
+		height: var( --kb-tl-marker, 12px );
+		border-radius: 50%;
+		background: var( --bw-timeline-accent, #4f46e5 );
+		box-shadow: 0 0 0 3px #fff;
+	}
+
+	&:last-child {
+		padding-bottom: 8px;
+	}
+
+	.bw-timeline-item__date {
+		margin-bottom: 6px;
+		font-size: 13px;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		line-height: 1.4;
+		text-transform: uppercase;
+		color: var( --bw-timeline-accent, #4f46e5 );
+	}
+
+	.bw-timeline-item__content {
+		> * + * {
+			margin-top: 0.8em;
+		}
+	}
+
+	// Options (each rule only applies when its class or element is present).
+	.bw-timeline-item__image {
+		display: block;
+		max-width: 100%;
+		height: auto;
+		margin-bottom: 12px;
+		border-radius: 8px;
+	}
+
+	.bw-timeline-item__link {
+		display: inline-block;
+		margin-top: 12px;
+		color: var( --bw-timeline-accent, #4f46e5 );
+		font-weight: 600;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+
+	&.is-highlight::before {
+		box-shadow: 0 0 0 3px #fff, 0 0 0 6px var( --bw-timeline-accent, #4f46e5 );
+	}
+}
+
+// Marker styles are chosen on the timeline, so they are scoped to it.
+.wp-block-kriti-blocks-timeline {
+	&.bw-timeline--marker-ring .wp-block-kriti-blocks-timeline-item::before {
+		box-sizing: border-box;
+		background: #ffffff;
+		border: 3px solid var( --bw-timeline-accent, #4f46e5 );
+	}
+
+	&.bw-timeline--marker-square .wp-block-kriti-blocks-timeline-item::before {
+		border-radius: 2px;
+	}
+}

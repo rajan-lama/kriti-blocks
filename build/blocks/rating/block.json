@@ -1,0 +1,110 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/rating",
+  "version": "0.1.0",
+  "title": "BW Rating",
+  "category": "kriti-blocks",
+  "icon": "star-filled",
+  "description": "A star rating display with optional value and review label.",
+  "example": {},
+  "keywords": [
+    "rating",
+    "stars",
+    "review",
+    "score",
+    "feedback"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "ratingValue": {
+      "type": "number",
+      "default": 5
+    },
+    "maxRating": {
+      "type": "number",
+      "default": 5
+    },
+    "starSize": {
+      "type": "string",
+      "default": "medium"
+    },
+    "starColor": {
+      "type": "string",
+      "default": "#f59e0b"
+    },
+    "emptyStarColor": {
+      "type": "string",
+      "default": "#e5e7eb"
+    },
+    "showValue": {
+      "type": "boolean",
+      "default": false
+    },
+    "ratingLabel": {
+      "type": "string",
+      "default": ""
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    },
+    "iconShape": {
+      "type": "string",
+      "enum": [
+        "star",
+        "heart",
+        "circle",
+        "bolt"
+      ]
+    },
+    "roundHalf": {
+      "type": "boolean"
+    },
+    "customSize": {
+      "type": "number"
+    },
+    "starGap": {
+      "type": "number"
+    },
+    "labelPosition": {
+      "type": "string",
+      "enum": [
+        "before",
+        "below"
+      ]
+    },
+    "showMax": {
+      "type": "boolean"
+    },
+    "valueColor": {
+      "type": "string"
+    },
+    "labelColor": {
+      "type": "string"
+    },
+    "schemaMarkup": {
+      "type": "boolean"
+    },
+    "schemaName": {
+      "type": "string"
+    },
+    "ratingCount": {
+      "type": "number"
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

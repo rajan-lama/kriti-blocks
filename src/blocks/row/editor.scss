@@ -1,0 +1,18 @@
+.wp-block-kriti-blocks-row {
+  outline: 1px dashed #1e1e1e26;
+  outline-offset: 4px;
+
+  > .block-editor-inner-blocks {
+    width: 100%;
+
+    > .block-editor-block-list__layout {
+      display: var(--bw-row-display, flex);
+      flex-direction: var(--bw-row-direction, row);
+      flex-wrap: var(--bw-row-wrap, nowrap);
+      justify-content: var(--bw-row-justify, flex-start);
+      align-items: var(--bw-row-align, stretch);
+      gap: var(--bw-row-gap, 0px);
+      min-height: 40px;
+    }
+  }
+}

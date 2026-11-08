@@ -1,0 +1,10 @@
+.wp-block-kriti-blocks-alert {
+	outline: 1px dashed #1e1e1e26;
+	outline-offset: 4px;
+
+	.bw-alert-content {
+		&:focus {
+			outline: none;
+		}
+	}
+}

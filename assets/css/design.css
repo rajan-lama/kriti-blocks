@@ -1,0 +1,32 @@
+/* Kriti Blocks: shared design layer (entrance animations). */
+.kb-js .kb-anim {
+	opacity: 0;
+	transition-property: opacity, transform;
+	transition-duration: var(--kb-anim-duration, 600ms);
+	transition-delay: var(--kb-anim-delay, 0ms);
+	transition-timing-function: ease-out;
+}
+.kb-js .kb-anim--fade-up { transform: translateY(24px); }
+.kb-js .kb-anim--fade-down { transform: translateY(-24px); }
+.kb-js .kb-anim--fade-left { transform: translateX(24px); }
+.kb-js .kb-anim--fade-right { transform: translateX(-24px); }
+.kb-js .kb-anim--zoom-in { transform: scale(0.9); }
+.kb-js .kb-anim--flip { transform: perspective(600px) rotateX(-45deg); }
+.kb-js .kb-anim.kb-in {
+	opacity: 1;
+	transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+	.kb-js .kb-anim,
+	.kb-js .kb-anim.kb-in {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+}
+
+/* Inner wrapper added to columns so design styles stay inside the grid gutters. */
+.kb-col-inner {
+	box-sizing: border-box;
+	height: 100%;
+}

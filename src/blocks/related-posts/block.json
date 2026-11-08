@@ -1,0 +1,136 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/related-posts",
+  "version": "0.1.0",
+  "title": "BW Related Posts",
+  "category": "kriti-blocks",
+  "icon": "postList",
+  "description": "Displays posts related to the current entry by shared taxonomy terms.",
+  "example": {},
+  "keywords": ["related", "posts", "similar", "more like this"],
+  "usesContext": ["postId", "postType"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "attributes": {
+    "perPage": {
+      "type": "number",
+      "default": 3
+    },
+    "columns": {
+      "type": "number",
+      "default": 3
+    },
+    "orderBy": {
+      "type": "string",
+      "default": "date"
+    },
+    "order": {
+      "type": "string",
+      "default": "DESC"
+    },
+    "showFeaturedImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "imageSize": {
+      "type": "string",
+      "default": "medium_large"
+    },
+    "showExcerpt": {
+      "type": "boolean",
+      "default": false
+    },
+    "excerptLength": {
+      "type": "number",
+      "default": 20
+    },
+    "showDate": {
+      "type": "boolean",
+      "default": true
+    },
+    "readMoreText": {
+      "type": "string",
+      "default": ""
+    },
+    "relateBy": {
+      "type": "string",
+      "default": "all"
+    },
+    "manualIds": {
+      "type": "string",
+      "default": ""
+    },
+    "excludeIds": {
+      "type": "string",
+      "default": ""
+    },
+    "fallbackRecent": {
+      "type": "boolean",
+      "default": true
+    },
+    "headingText": {
+      "type": "string",
+      "default": ""
+    },
+    "headingTag": {
+      "type": "string",
+      "default": "h2"
+    },
+    "showAuthor": {
+      "type": "boolean",
+      "default": false
+    },
+    "showReadingTime": {
+      "type": "boolean",
+      "default": false
+    },
+    "showComments": {
+      "type": "boolean",
+      "default": false
+    },
+    "cardStyle": {
+      "type": "string",
+      "default": "boxed"
+    },
+    "hoverEffect": {
+      "type": "string",
+      "default": "none"
+    },
+    "imageRatio": {
+      "type": "string",
+      "default": "default"
+    },
+    "titleTag": {
+      "type": "string",
+      "default": "h3"
+    },
+    "columnsTablet": {
+      "type": "number",
+      "default": 0
+    },
+    "columnsMobile": {
+      "type": "number",
+      "default": 0
+    },
+    "noResultsText": {
+      "type": "string",
+      "default": ""
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

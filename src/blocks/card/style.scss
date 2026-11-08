@@ -1,0 +1,143 @@
+.wp-block-kriti-blocks-card {
+	background-color: #ffffff;
+	border: 1px solid #e5e7eb;
+	border-radius: 8px;
+	overflow: hidden;
+
+	&.bw-card-padding-none .bw-card-body {
+		padding: 0;
+	}
+
+	&.bw-card-padding-small .bw-card-body {
+		padding: 16px;
+	}
+
+	&.bw-card-padding-medium .bw-card-body {
+		padding: 24px;
+	}
+
+	&.bw-card-padding-large .bw-card-body {
+		padding: 40px;
+	}
+
+	.bw-card-media {
+		margin: 0;
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+		}
+	}
+}
+
+// Options (every rule below only applies when its class is present).
+.wp-block-kriti-blocks-card {
+	&.bw-card--badge,
+	&.bw-card--linked {
+		position: relative;
+	}
+
+	.bw-card-badge {
+		position: absolute;
+		top: 12px;
+		left: 12px;
+		z-index: 2;
+		padding: 4px 12px;
+		border-radius: 999px;
+		background-color: var( --kb-card-badge-bg, #4f46e5 );
+		color: var( --kb-card-badge-color, #ffffff );
+		font-size: 12px;
+		font-weight: 600;
+		line-height: 1.4;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+	}
+
+	&.bw-card--ratio .bw-card-media img {
+		height: 100%;
+		aspect-ratio: var( --kb-card-ratio );
+	}
+
+	&.bw-card--img-left,
+	&.bw-card--img-right {
+		display: flex;
+		align-items: stretch;
+
+		.bw-card-media {
+			flex: 0 0 40%;
+			max-width: 40%;
+
+			img {
+				height: 100%;
+			}
+		}
+
+		.bw-card-body {
+			flex: 1 1 auto;
+			min-width: 0;
+		}
+	}
+
+	&.bw-card--img-right .bw-card-media {
+		order: 2;
+	}
+
+	@media ( max-width: 600px ) {
+		&.bw-card--img-left,
+		&.bw-card--img-right {
+			display: block;
+
+			.bw-card-media {
+				max-width: none;
+			}
+		}
+	}
+
+	&.bw-card--hover-lift,
+	&.bw-card--hover-zoom {
+		transition: transform 0.25s ease, box-shadow 0.25s ease;
+	}
+
+	&.bw-card--hover-lift:hover {
+		transform: translateY( -4px );
+		box-shadow: 0 12px 28px rgba( 0, 0, 0, 0.14 );
+	}
+
+	&.bw-card--hover-zoom .bw-card-media {
+		overflow: hidden;
+
+		img {
+			transition: transform 0.4s ease;
+		}
+	}
+
+	&.bw-card--hover-zoom:hover .bw-card-media img {
+		transform: scale( 1.06 );
+	}
+
+	.bw-card-link {
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+	}
+
+	&.bw-card--linked .bw-card-body {
+		a,
+		button {
+			position: relative;
+			z-index: 2;
+		}
+	}
+
+	@media ( prefers-reduced-motion: reduce ) {
+		&.bw-card--hover-lift:hover {
+			transform: none;
+		}
+
+		&.bw-card--hover-zoom:hover .bw-card-media img {
+			transform: none;
+		}
+	}
+}

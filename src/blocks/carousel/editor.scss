@@ -1,0 +1,60 @@
+.wp-block-kriti-blocks-carousel {
+  position: relative;
+  border: 1px dashed lightblue;
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: block; // Ensure visible in editor
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.3); // temporary for editor preview
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+
+  .carousel-control-prev {
+    left: 10px;
+  }
+
+  .carousel-control-next {
+    right: 10px;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-size: 100% 100%;
+  }
+
+  table.slider-table {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    font-size: 16px;
+
+    thead {
+      background: #474747; // #a1cdff;
+      color: #fff;
+      padding: 8px 10px;
+      font-weight: bold;
+
+      tr td {
+        padding: 8px 10px;
+      }
+    }
+    tr {
+      cursor: pointer;
+
+      &.active {
+        background: #e7f3ff;
+        border-left: 4px solid #007cba;
+      }
+
+      td {
+        border: 1px solid #464646;
+        padding: 0 10px;
+      }
+    }
+  }
+}

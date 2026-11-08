@@ -1,0 +1,32 @@
+.wp-block-kriti-blocks-modal {
+	.bw-modal__trigger {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 12px 24px;
+		background-color: var( --bw-modal-trigger-bg );
+		border-radius: 6px;
+		color: var( --bw-modal-trigger-color );
+		font-weight: 600;
+		cursor: default;
+	}
+
+	&.bw-modal--no-trigger .bw-modal__trigger {
+		display: inline-flex !important;
+		opacity: 0.5;
+	}
+
+	.bw-modal__panel {
+		margin-top: 16px;
+		padding: 20px;
+		background-color: var( --bw-modal-panel-bg );
+		border: 1px dashed #1e1e1e26;
+		border-radius: var( --bw-modal-radius );
+	}
+
+	.bw-modal__editor-note {
+		margin: 0 0 12px;
+		color: #757575;
+		font-style: italic;
+	}
+}

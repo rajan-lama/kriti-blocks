@@ -1,0 +1,58 @@
+.wp-block-kriti-blocks-testimonial-slider {
+	.bw-ts__hint {
+		margin: 0 0 12px;
+		color: #757575;
+		font-style: italic;
+	}
+
+	.bw-ts__slide-editor {
+		margin-bottom: 16px;
+		padding: 16px;
+		background-color: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 8px;
+	}
+
+	.bw-ts__slide-toolbar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 12px;
+	}
+
+	.bw-ts__slide-number {
+		font-weight: 600;
+	}
+
+	.bw-ts__slide-actions {
+		display: flex;
+		gap: 4px;
+	}
+
+	.bw-ts__avatar-control {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		margin-bottom: 12px;
+	}
+
+	.bw-ts__avatar {
+		width: 52px;
+		height: 52px;
+		border-radius: 50%;
+		object-fit: cover;
+	}
+
+	.bw-ts__quote {
+		font-size: 16px;
+	}
+
+	.bw-ts__author {
+		font-weight: 600;
+	}
+
+	.bw-ts__role {
+		font-size: 13px;
+		opacity: 0.75;
+	}
+}

@@ -1,0 +1,298 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/section",
+  "version": "0.1.0",
+  "title": "BW Section",
+  "category": "kriti-blocks",
+  "icon": "layout",
+  "description": "Bootstrap-like section block",
+  "example": {},
+  "keywords": [
+    "section"
+  ],
+  "supports": {},
+  "attributes": {
+    "tagType": {
+      "type": "string",
+      "default": "section"
+    },
+    "layout": {
+      "type": "string",
+      "default": "layout-one"
+    },
+    "container": {
+      "type": "string",
+      "default": "container"
+    },
+    "paddingY": {
+      "type": "string",
+      "default": "py-5"
+    },
+    "background": {
+      "type": "string",
+      "default": "none"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "backgroundImage": {
+      "type": "array",
+      "source": "query",
+      "selector": "img",
+      "query": {
+        "url": {
+          "type": "string",
+          "source": "attribute",
+          "attribute": "src"
+        },
+        "alt": {
+          "type": "string",
+          "source": "attribute",
+          "attribute": "alt"
+        }
+      }
+    },
+    "borderStyle": {
+      "type": "string",
+      "default": "solid"
+    },
+    "border": {
+      "type": "array"
+    },
+    "margin": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "top": {
+            "value": 0,
+            "unit": "px"
+          },
+          "right": {
+            "value": 15,
+            "unit": "px"
+          },
+          "bottom": {
+            "value": 0,
+            "unit": "px"
+          },
+          "left": {
+            "value": 15,
+            "unit": "px"
+          }
+        },
+        "tablet": {
+          "top": {
+            "value": 0,
+            "unit": "px"
+          },
+          "right": {
+            "value": 15,
+            "unit": "px"
+          },
+          "bottom": {
+            "value": 0,
+            "unit": "px"
+          },
+          "left": {
+            "value": 15,
+            "unit": "px"
+          }
+        },
+        "mobile": {
+          "top": {
+            "value": 0,
+            "unit": "px"
+          },
+          "right": {
+            "value": 15,
+            "unit": "px"
+          },
+          "bottom": {
+            "value": 0,
+            "unit": "px"
+          },
+          "left": {
+            "value": 15,
+            "unit": "px"
+          }
+        }
+      }
+    },
+    "padding": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "top": {
+            "value": 0,
+            "unit": "px"
+          },
+          "right": {
+            "value": 0,
+            "unit": "px"
+          },
+          "bottom": {
+            "value": 0,
+            "unit": "px"
+          },
+          "left": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "tablet": {
+          "top": {
+            "value": 0,
+            "unit": "px"
+          },
+          "right": {
+            "value": 0,
+            "unit": "px"
+          },
+          "bottom": {
+            "value": 0,
+            "unit": "px"
+          },
+          "left": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "mobile": {
+          "top": {
+            "value": 0,
+            "unit": "px"
+          },
+          "right": {
+            "value": 0,
+            "unit": "px"
+          },
+          "bottom": {
+            "value": 0,
+            "unit": "px"
+          },
+          "left": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      }
+    },
+    "zIndex": {
+      "type": "string",
+      "default": "0"
+    },
+    "showDesktop": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTablet": {
+      "type": "boolean",
+      "default": true
+    },
+    "showMobile": {
+      "type": "boolean",
+      "default": true
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    },
+    "userVisibility": {
+      "type": "string",
+      "default": "all"
+    },
+    "dateRangeFrom": {
+      "type": "string",
+      "default": ""
+    },
+    "dateRangeTo": {
+      "type": "string",
+      "default": ""
+    },
+    "topDividerUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "bottomDividerUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "animation": {
+      "type": "string",
+      "default": "none"
+    },
+    "hoverAnimation": {
+      "type": "string",
+      "default": "none"
+    },
+    "borderWidth": {
+      "type": "number",
+      "default": 0
+    },
+    "borderColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "boxShadow": {
+      "type": "string",
+      "default": "none"
+    },
+    "bgImage": {
+      "type": "string"
+    },
+    "bgFocal": {
+      "type": "object"
+    },
+    "bgFixed": {
+      "type": "boolean"
+    },
+    "bgVideo": {
+      "type": "string"
+    },
+    "bgVideoHideMobile": {
+      "type": "boolean"
+    },
+    "bgOverlayColor": {
+      "type": "string"
+    },
+    "bgOverlayOpacity": {
+      "type": "number"
+    },
+    "contentWidth": {
+      "type": "number"
+    },
+    "contentWidthUnit": {
+      "type": "string",
+      "enum": [
+        "px",
+        "%",
+        "rem",
+        "vw"
+      ]
+    },
+    "verticalAlign": {
+      "type": "string",
+      "enum": [
+        "center",
+        "end"
+      ]
+    },
+    "overflow": {
+      "type": "string",
+      "enum": [
+        "hidden",
+        "clip"
+      ]
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

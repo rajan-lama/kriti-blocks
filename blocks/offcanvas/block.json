@@ -1,0 +1,95 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/offcanvas",
+  "version": "0.1.0",
+  "title": "BW Off-canvas Drawer",
+  "category": "kriti-blocks",
+  "icon": "align-pull-right",
+  "description": "A side drawer that slides in from the left or right edge with inner content.",
+  "example": {},
+  "keywords": [
+    "offcanvas",
+    "drawer",
+    "sidebar",
+    "panel",
+    "menu"
+  ],
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "triggerText": {
+      "type": "string",
+      "default": "Open menu"
+    },
+    "triggerBackground": {
+      "type": "string",
+      "default": "#4f46e5"
+    },
+    "triggerColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "side": {
+      "type": "string",
+      "default": "right"
+    },
+    "drawerWidth": {
+      "type": "number",
+      "default": 320
+    },
+    "drawerBackground": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "showCloseButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "closeOnBackdrop": {
+      "type": "boolean",
+      "default": true
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    },
+    "overlayColor": {
+      "type": "string"
+    },
+    "overlayBlur": {
+      "type": "number"
+    },
+    "animationSpeed": {
+      "type": "number"
+    },
+    "hamburger": {
+      "type": "boolean"
+    },
+    "hideTrigger": {
+      "type": "boolean"
+    },
+    "widthTablet": {
+      "type": "number"
+    },
+    "widthMobile": {
+      "type": "number"
+    },
+    "closeOnLink": {
+      "type": "boolean"
+    },
+    "triggerSelector": {
+      "type": "string"
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

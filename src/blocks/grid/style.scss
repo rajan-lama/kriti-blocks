@@ -1,0 +1,69 @@
+.wp-block-kriti-blocks-grid {
+	display: grid;
+	grid-template-columns: repeat(
+		var( --bw-grid-columns, 2 ),
+		minmax( 0, 1fr )
+	);
+	column-gap: var( --bw-grid-column-gap, 20px );
+	row-gap: var( --bw-grid-row-gap, 20px );
+
+	> * {
+		min-width: 0;
+	}
+}
+
+// The column count is also set inline, so these rules need !important.
+.wp-block-kriti-blocks-grid.bw-grid--auto {
+	grid-template-columns: repeat(
+		auto-fit,
+		minmax( min( var( --bw-grid-min ), 100% ), 1fr )
+	) !important;
+}
+
+@media ( max-width: 1024px ) {
+	.wp-block-kriti-blocks-grid.bw-grid--cols-t {
+		grid-template-columns: repeat(
+			var( --bw-grid-cols-t ),
+			minmax( 0, 1fr )
+		) !important;
+	}
+}
+
+@media ( max-width: 767px ) {
+	.wp-block-kriti-blocks-grid.bw-grid--cols-m {
+		grid-template-columns: repeat(
+			var( --bw-grid-cols-m ),
+			minmax( 0, 1fr )
+		) !important;
+	}
+}
+
+.wp-block-kriti-blocks-grid {
+	&.bw-grid--align-start {
+		align-items: start;
+	}
+
+	&.bw-grid--align-center {
+		align-items: center;
+	}
+
+	&.bw-grid--align-end {
+		align-items: end;
+	}
+
+	&.bw-grid--justify-start {
+		justify-items: start;
+	}
+
+	&.bw-grid--justify-center {
+		justify-items: center;
+	}
+
+	&.bw-grid--justify-end {
+		justify-items: end;
+	}
+
+	&.bw-grid--dense {
+		grid-auto-flow: dense;
+	}
+}

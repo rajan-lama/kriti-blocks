@@ -1,0 +1,85 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/pricing-column",
+  "version": "0.1.0",
+  "title": "BW Pricing Column",
+  "category": "kriti-blocks",
+  "icon": "money-alt",
+  "description": "A single pricing plan column for use inside the Pricing Table block.",
+  "example": {},
+  "keywords": ["pricing", "price", "plan", "package"],
+  "parent": ["kriti-blocks/pricing-table"],
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "planName": {
+      "type": "string",
+      "default": ""
+    },
+    "planPrice": {
+      "type": "string",
+      "default": ""
+    },
+    "planPeriod": {
+      "type": "string",
+      "default": ""
+    },
+    "yearlyPrice": { "type": "string", "default": "" },
+    "yearlyPeriod": { "type": "string", "default": "" },
+    "features": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonText": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "isHighlight": {
+      "type": "boolean",
+      "default": false
+    },
+    "planAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "tagType": {
+      "type": "string",
+      "default": "div"
+    },
+    "featureIconStyle": {
+      "type": "string",
+      "enum": ["check", "cross", "dot", "arrow", "none"]
+    },
+    "featureIconColor": { "type": "string" },
+    "featureMarkers": { "type": "boolean" },
+    "badgeText": { "type": "string" },
+    "badgeBg": { "type": "string" },
+    "badgeColor": { "type": "string" },
+    "currencySymbol": { "type": "string" },
+    "originalPrice": { "type": "string" },
+    "buttonStyle": { "type": "string", "enum": ["solid", "outline", "ghost"] },
+    "buttonBg": { "type": "string" },
+    "buttonColor": { "type": "string" },
+    "buttonNewTab": { "type": "boolean" },
+    "buttonNofollow": { "type": "boolean" },
+    "accentColor": { "type": "string" },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

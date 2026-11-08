@@ -1,0 +1,76 @@
+// Optional behaviour shared by the Cover and Hero blocks. Each rule only
+// applies when its class is present.
+.kb-cover--parallax {
+  background-attachment: fixed;
+}
+
+@media (max-width: 1024px) {
+  .kb-cover--parallax {
+    background-attachment: scroll;
+  }
+
+  .kb-cover--rh[style*='--kb-cover-h-t'] {
+    min-height: var(--kb-cover-h-t) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .kb-cover--rh[style*='--kb-cover-h-m'] {
+    min-height: var(--kb-cover-h-m) !important;
+  }
+}
+
+.kb-cover-video,
+.kb-cover-video-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.kb-cover-video {
+  z-index: 0;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.kb-cover-video-overlay {
+  z-index: 0;
+  pointer-events: none;
+}
+
+.wp-block-kriti-blocks-cover .bw-cover-content,
+.wp-block-kriti-blocks-hero .bw-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.kb-scroll-down {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  z-index: 2;
+  padding: 4px;
+  border: 0;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+  transform: translateX(-50%);
+  animation: kb-scroll-bounce 1.6s ease-in-out infinite;
+}
+
+@keyframes kb-scroll-bounce {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kb-scroll-down {
+    animation: none;
+  }
+}

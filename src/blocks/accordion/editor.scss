@@ -1,0 +1,8 @@
+.wp-block-kriti-blocks-accordion {
+	outline: 1px dashed #1e1e1e26;
+	outline-offset: 4px;
+
+	.wp-block-kriti-blocks-accordion-item + .wp-block-kriti-blocks-accordion-item {
+		margin-top: 8px;
+	}
+}

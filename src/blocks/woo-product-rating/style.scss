@@ -1,0 +1,56 @@
+.wp-block-kriti-blocks-woo-product-rating {
+
+	.bw-woo-product-rating__stars {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.bw-woo-product-rating__count {
+		display: inline-block;
+		margin-left: 6px;
+		vertical-align: middle;
+		color: inherit;
+		font-size: 0.875em;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+
+	.bw-woo-product-rating__number {
+		display: inline-block;
+		margin-left: 6px;
+		vertical-align: middle;
+		font-weight: 600;
+	}
+
+	.bw-woo-product-rating__icons {
+		position: relative;
+		display: inline-block;
+		line-height: 1;
+		letter-spacing: 0.1em;
+		white-space: nowrap;
+	}
+
+	.bw-woo-product-rating__icons-base {
+		color: var( --bw-woo-rating-empty-color, #cbd5e1 );
+	}
+
+	.bw-woo-product-rating__icons-fill {
+		position: absolute;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+		color: var( --bw-woo-rating-star-color, #f59e0b );
+	}
+
+	&.bw-woo-product-rating--star-color .star-rating span::before {
+		color: var( --bw-woo-rating-star-color );
+	}
+
+	&.bw-woo-product-rating--empty-color .star-rating::before {
+		color: var( --bw-woo-rating-empty-color );
+	}
+}

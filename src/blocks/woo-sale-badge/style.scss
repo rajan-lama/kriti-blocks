@@ -1,0 +1,72 @@
+.wp-block-kriti-blocks-woo-sale-badge {
+
+	.bw-woo-sale-badge__text {
+		display: inline-block;
+		padding: 4px 10px;
+		background-color: #1e293b;
+		color: #fff;
+		font-size: 12px;
+		font-weight: 600;
+		line-height: 1.4;
+	}
+
+	&.bw-woo-sale-badge--overlay {
+		position: absolute;
+		z-index: 2;
+		width: max-content;
+		pointer-events: none;
+	}
+
+	&.bw-woo-sale-badge--top-left {
+		top: var( --bw-woo-sale-badge-offset, 10px );
+		left: var( --bw-woo-sale-badge-offset, 10px );
+	}
+
+	&.bw-woo-sale-badge--top-right {
+		top: var( --bw-woo-sale-badge-offset, 10px );
+		right: var( --bw-woo-sale-badge-offset, 10px );
+	}
+
+	&.bw-woo-sale-badge--bottom-left {
+		bottom: var( --bw-woo-sale-badge-offset, 10px );
+		left: var( --bw-woo-sale-badge-offset, 10px );
+	}
+
+	&.bw-woo-sale-badge--bottom-right {
+		right: var( --bw-woo-sale-badge-offset, 10px );
+		bottom: var( --bw-woo-sale-badge-offset, 10px );
+	}
+
+	&.bw-woo-sale-badge--shape-square .bw-woo-sale-badge__text {
+		border-radius: 0;
+	}
+
+	&.bw-woo-sale-badge--shape-circle .bw-woo-sale-badge__text {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 3.4em;
+		aspect-ratio: 1 / 1;
+		padding: 4px;
+		border-radius: 50%;
+		text-align: center;
+	}
+
+	&.bw-woo-sale-badge--shape-ribbon .bw-woo-sale-badge__text {
+		padding-right: 18px;
+		border-radius: 0;
+		clip-path: polygon( 0 0, 100% 0, calc( 100% - 10px ) 50%, 100% 100%, 0 100% );
+	}
+
+	&.bw-woo-sale-badge--new .bw-woo-sale-badge__text {
+		background-color: #15803d;
+	}
+
+	&.bw-woo-sale-badge--outofstock .bw-woo-sale-badge__text {
+		background-color: #64748b;
+	}
+
+	&.bw-woo-sale-badge--lowstock .bw-woo-sale-badge__text {
+		background-color: #d97706;
+	}
+}

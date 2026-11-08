@@ -1,0 +1,32 @@
+.wp-block-kriti-blocks-back-to-top {
+	.bw-btt__editor {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		padding: 12px;
+		border: 1px dashed #1e1e1e26;
+		border-radius: 8px;
+	}
+
+	.bw-btt__button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: var( --bw-btt-size );
+		height: var( --bw-btt-size );
+		background-color: var( --bw-btt-bg );
+		border-radius: var( --bw-btt-radius );
+		color: var( --bw-btt-color );
+
+		svg:not( .bw-btt__ring ) {
+			width: var( --bw-btt-icon-size );
+			height: var( --bw-btt-icon-size );
+			fill: currentColor;
+		}
+	}
+
+	.bw-btt__editor-label {
+		color: #757575;
+		font-style: italic;
+	}
+}

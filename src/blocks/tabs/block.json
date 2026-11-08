@@ -1,0 +1,80 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/tabs",
+  "version": "0.1.0",
+  "title": "BW Tabs",
+  "category": "kriti-blocks",
+  "icon": "table-row-after",
+  "description": "Switchable tab panels for organizing content.",
+  "example": {},
+  "keywords": ["tabs", "tabbed", "panels", "content"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "attributes": {
+    "tabItems": {
+      "type": "array",
+      "default": [
+        {
+          "label": "",
+          "content": ""
+        }
+      ]
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    },
+    "tabsStyle": {
+      "type": "string",
+      "default": "underline",
+      "enum": ["underline", "pills", "boxed"]
+    },
+    "orientation": {
+      "type": "string",
+      "default": "horizontal",
+      "enum": ["horizontal", "vertical"]
+    },
+    "tabAlign": {
+      "type": "string",
+      "default": "left",
+      "enum": ["left", "center", "right", "stretch"]
+    },
+    "defaultTab": {
+      "type": "number",
+      "default": 0
+    },
+    "activeColor": {
+      "type": "string"
+    },
+    "tabColor": {
+      "type": "string"
+    },
+    "hoverColor": {
+      "type": "string"
+    },
+    "activeBg": {
+      "type": "string"
+    },
+    "lineColor": {
+      "type": "string"
+    },
+    "panelBg": {
+      "type": "string"
+    },
+    "panelPadding": {
+      "type": "number"
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

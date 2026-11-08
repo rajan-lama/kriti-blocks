@@ -1,0 +1,79 @@
+// .wp-block-kriti-blocks-section {
+//   border: 1px dashed !important;
+//   padding: 0px;
+// }
+
+// .wp-block-kriti-blocks-section.is-selected {
+//     border: 1px solid;
+//     padding: 0 !important;
+// }
+
+// .wp-block-kriti-blocks-section::after {
+//     content: attr(data-title) !important;
+//     position: absolute !important;
+//     top: -20px !important;
+//     left: unset !important;
+//     right: 0px !important;
+//     background: #1e1e1e;
+//     color: #fff;
+//     font-size: 12px;
+//     border-radius: 4px;
+//     white-space: nowrap;
+//     z-index: 10;
+//     width: auto;
+//     height: 18px;
+//     padding: 2px 4px;
+//   }
+
+// Fix for Bootstrap row > col layout in Gutenberg Editor
+.wp-block-kriti-blocks-columns {
+  width: 100%;
+  .row {
+    width: 100%;
+
+    .block-editor-inner-blocks {
+      width: 100%;
+
+      > .block-editor-block-list__layout {
+        display: flex;
+        flex-wrap: wrap;
+        // margin-left: -15px;
+        // margin-right: -15px;
+        // width: calc(100% + 30px);
+
+        .wp-block-kriti-blocks-column {
+          p {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .col-2-4 {
+    flex: 0 0 auto;
+    width: 20%;
+  }
+}
+
+// The front end grid uses negative margins that the editor does not need.
+.wp-block-kriti-blocks-columns.wp-block-kriti-blocks-columns > .row {
+  margin-right: 0;
+  margin-left: 0;
+
+  .block-editor-inner-blocks > .block-editor-block-list__layout {
+    align-items: var(--kb-editor-align, stretch);
+  }
+}
+
+.wp-block-kriti-blocks-columns {
+  &.kb-columns--align-start { --kb-editor-align: flex-start; }
+  &.kb-columns--align-center { --kb-editor-align: center; }
+  &.kb-columns--align-end { --kb-editor-align: flex-end; }
+
+  &.kb-columns--justify-center .block-editor-block-list__layout { justify-content: center; }
+  &.kb-columns--justify-end .block-editor-block-list__layout { justify-content: flex-end; }
+  &.kb-columns--justify-between .block-editor-block-list__layout { justify-content: space-between; }
+  &.kb-columns--justify-around .block-editor-block-list__layout { justify-content: space-around; }
+  &.kb-columns--reverse .block-editor-block-list__layout { flex-direction: row-reverse; }
+}

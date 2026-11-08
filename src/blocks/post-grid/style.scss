@@ -1,0 +1,216 @@
+.wp-block-kriti-blocks-post-grid {
+	--bw-post-grid-columns: 3;
+
+	display: grid;
+	grid-template-columns: repeat( var( --bw-post-grid-columns ), minmax( 0, 1fr ) );
+	gap: 24px;
+
+	.bw-post-grid__item {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		background-color: #fff;
+		border: 1px solid #e2e8f0;
+		border-radius: 10px;
+	}
+
+	.bw-post-grid__image {
+		display: block;
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			aspect-ratio: var( --bw-post-grid-ratio, 16 / 9 );
+			object-fit: cover;
+		}
+	}
+
+	.bw-post-grid__body {
+		display: flex;
+		flex: 1 1 auto;
+		flex-direction: column;
+		gap: 8px;
+		padding: 18px;
+	}
+
+	.bw-post-grid__title {
+		margin: 0;
+		font-size: 18px;
+		line-height: 1.35;
+
+		a {
+			color: inherit;
+			text-decoration: none;
+
+			&:hover,
+			&:focus {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.bw-post-grid__meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+		color: #64748b;
+		font-size: 13px;
+	}
+
+	.bw-post-grid__terms a {
+		color: inherit;
+	}
+
+	.bw-post-grid__excerpt {
+		margin: 0;
+		line-height: 1.6;
+	}
+
+	.bw-post-grid__more {
+		margin-top: auto;
+		font-weight: 600;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+
+	&.bw-post-grid--list {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+
+		.bw-post-grid__item {
+			flex-direction: row;
+		}
+
+		.bw-post-grid__image {
+			flex: 0 0 33%;
+			max-width: 320px;
+
+			img {
+				height: 100%;
+				aspect-ratio: var( --bw-post-grid-ratio, 4 / 3 );
+			}
+		}
+
+		.bw-post-grid__body {
+			padding: 18px 20px;
+		}
+
+		@media ( max-width: 600px ) {
+			.bw-post-grid__item {
+				flex-direction: column;
+			}
+
+			.bw-post-grid__image {
+				flex-basis: auto;
+				max-width: none;
+			}
+		}
+	}
+
+	&.bw-post-grid--empty {
+		display: block;
+	}
+
+	.bw-post-grid__empty {
+		margin: 0;
+		color: #64748b;
+	}
+
+	/* Card styles. Boxed is the default and has no modifier class. */
+	&.bw-post-grid--card-plain .bw-post-grid__item {
+		background-color: transparent;
+		border: 0;
+		border-radius: 0;
+	}
+
+	&.bw-post-grid--card-plain .bw-post-grid__body {
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+	&.bw-post-grid--card-overlay .bw-post-grid__item {
+		position: relative;
+		flex-direction: column;
+		justify-content: flex-end;
+		min-height: 280px;
+		background-color: #0f172a;
+		border: 0;
+		color: #fff;
+		aspect-ratio: var( --bw-post-grid-ratio, auto );
+	}
+
+	&.bw-post-grid--card-overlay .bw-post-grid__image {
+		position: absolute;
+		inset: 0;
+		flex: none;
+		max-width: none;
+
+		img {
+			height: 100%;
+			aspect-ratio: auto;
+		}
+	}
+
+	&.bw-post-grid--card-overlay .bw-post-grid__body {
+		position: relative;
+		z-index: 1;
+		flex: 0 0 auto;
+		padding-top: 56px;
+		background: linear-gradient( to top, rgb( 15 23 42 / 88% ), rgb( 15 23 42 / 0% ) );
+
+		a,
+		.bw-post-grid__meta,
+		.bw-post-grid__excerpt {
+			color: #fff;
+		}
+	}
+
+	/* Hover effects. */
+	&.bw-post-grid--hover-lift .bw-post-grid__item {
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+		&:hover,
+		&:focus-within {
+			transform: translateY( -4px );
+			box-shadow: 0 10px 24px rgb( 15 23 42 / 14% );
+		}
+	}
+
+	&.bw-post-grid--hover-zoom .bw-post-grid__image {
+		overflow: hidden;
+
+		img {
+			transition: transform 0.35s ease;
+		}
+	}
+
+	&.bw-post-grid--hover-zoom .bw-post-grid__item:hover .bw-post-grid__image img {
+		transform: scale( 1.06 );
+	}
+
+	@media ( prefers-reduced-motion: reduce ) {
+		&.bw-post-grid--hover-lift .bw-post-grid__item,
+		&.bw-post-grid--hover-zoom .bw-post-grid__image img {
+			transition: none;
+		}
+
+		&.bw-post-grid--hover-lift .bw-post-grid__item:hover,
+		&.bw-post-grid--hover-zoom .bw-post-grid__item:hover .bw-post-grid__image img {
+			transform: none;
+		}
+	}
+
+	@media ( max-width: 1024px ) {
+		grid-template-columns: repeat( var( --bw-post-grid-columns-tablet, 2 ), minmax( 0, 1fr ) );
+	}
+
+	@media ( max-width: 600px ) {
+		grid-template-columns: repeat( var( --bw-post-grid-columns-mobile, 1 ), minmax( 0, 1fr ) );
+	}
+}

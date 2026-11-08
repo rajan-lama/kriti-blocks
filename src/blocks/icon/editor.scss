@@ -1,0 +1,69 @@
+.bw-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+.bw-icon-btn {
+  padding: 10px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+
+  &.is-active {
+    background: #007cba;
+    color: #fff;
+  }
+}
+
+.wp-block-kriti-blocks-icon {
+  --bw-icon-size: 32px;
+  --bw-icon-color: #222;
+  --bw-icon-bg: transparent;
+  --bw-icon-padding: 0;
+  --bw-icon-radius: 0;
+}
+
+.wp-block-kriti-blocks-icon svg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--bw-icon-size);
+  height: var(--bw-icon-size);
+  color: var(--bw-icon-color);
+  background: var(--bw-icon-bg);
+  padding: var(--bw-icon-padding);
+  border-radius: var(--bw-icon-radius);
+}
+
+.bw-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  gap: 1px;
+
+  .icon-item button {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon {
+    color: #2380b7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 40px;
+      height: 40px;
+      border: 1px solid #89d1ff;
+      width: 40px;
+      height: 40px;
+      display: block;
+    }
+  }
+}

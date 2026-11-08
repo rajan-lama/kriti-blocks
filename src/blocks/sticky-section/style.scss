@@ -1,0 +1,74 @@
+.wp-block-kriti-blocks-sticky-section {
+	--bw-sticky-offset: 0px;
+	--bw-sticky-z: 10;
+
+	position: sticky;
+	top: var( --bw-sticky-offset );
+	z-index: var( --bw-sticky-z );
+	transition: box-shadow 0.2s ease;
+
+	&.is-stuck[data-shadow='true'] {
+		box-shadow: 0 6px 18px rgba( 0, 0, 0, 0.12 );
+	}
+
+	// Stick to the bottom edge of the viewport instead of the top.
+	&.bw-sticky--bottom {
+		top: auto;
+		bottom: var( --bw-sticky-offset );
+
+		&.is-stuck[data-shadow='true'] {
+			box-shadow: 0 -6px 18px rgba( 0, 0, 0, 0.12 );
+		}
+	}
+
+	// Background change once stuck.
+	&.bw-sticky--stuck-bg {
+		transition: box-shadow 0.2s ease, background-color 0.2s ease;
+
+		&.is-stuck {
+			background-color: var( --bw-sticky-stuck-bg );
+		}
+	}
+
+	// Smaller vertical padding once stuck.
+	&.bw-sticky--shrink {
+		transition: box-shadow 0.2s ease, padding 0.2s ease,
+			background-color 0.2s ease;
+
+		&.is-stuck {
+			padding-top: var( --bw-sticky-stuck-pad ) !important;
+			padding-bottom: var( --bw-sticky-stuck-pad ) !important;
+		}
+	}
+
+	// Slide away while scrolling down, come back when scrolling up.
+	&.bw-sticky--smart {
+		transition: box-shadow 0.2s ease, transform 0.25s ease,
+			background-color 0.2s ease, padding 0.2s ease;
+
+		&.is-hidden:not( :focus-within ) {
+			transform: translateY( -110% );
+		}
+	}
+}
+
+// Sticky can be switched off on smaller screens.
+@media ( max-width: 1024px ) {
+	.wp-block-kriti-blocks-sticky-section.bw-sticky--off-tablet {
+		position: static;
+		transform: none;
+	}
+}
+
+@media ( max-width: 767px ) {
+	.wp-block-kriti-blocks-sticky-section.bw-sticky--off-mobile {
+		position: static;
+		transform: none;
+	}
+}
+
+@media ( prefers-reduced-motion: reduce ) {
+	.wp-block-kriti-blocks-sticky-section {
+		transition: none !important;
+	}
+}

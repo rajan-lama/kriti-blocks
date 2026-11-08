@@ -1,0 +1,76 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/woo-sale-badge",
+  "version": "0.1.0",
+  "title": "BW Sale Badge",
+  "category": "kriti-blocks",
+  "icon": "tag",
+  "description": "Displays a sale badge for a WooCommerce product. Requires WooCommerce.",
+  "example": {},
+  "keywords": ["woocommerce", "product", "sale", "badge", "discount"],
+  "usesContext": ["postId", "postType"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "attributes": {
+    "text": {
+      "type": "string",
+      "default": ""
+    },
+    "showPercentage": {
+      "type": "boolean",
+      "default": false
+    },
+    "badgeColor": {
+      "type": "string",
+      "default": ""
+    },
+    "textColor": {
+      "type": "string",
+      "default": ""
+    },
+    "fontSize": {
+      "type": "number",
+      "default": 0
+    },
+    "borderRadius": {
+      "type": "number",
+      "default": 999
+    },
+    "badgeType": {
+      "type": "string",
+      "default": "sale"
+    },
+    "newDays": {
+      "type": "number",
+      "default": 30
+    },
+    "position": {
+      "type": "string",
+      "default": "none"
+    },
+    "shape": {
+      "type": "string",
+      "default": "default"
+    },
+    "offset": {
+      "type": "number",
+      "default": 10
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

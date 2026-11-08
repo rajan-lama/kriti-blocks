@@ -1,0 +1,127 @@
+.wp-block-kriti-blocks-woo-product-filters {
+
+	.bw-woo-product-filters__title {
+		margin: 0 0 12px;
+		font-size: 18px;
+		font-weight: 600;
+	}
+
+	.bw-woo-product-filters__group {
+		margin-bottom: 16px;
+	}
+
+	.bw-woo-product-filters__group-title {
+		display: block;
+		margin-bottom: 8px;
+		font-size: 13px;
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+	}
+
+	.bw-woo-product-filters__categories {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.bw-woo-product-filters__category-link {
+		display: flex;
+		justify-content: space-between;
+		gap: 8px;
+		padding: 6px 0;
+		color: currentcolor;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+
+		&[aria-current="page"] {
+			font-weight: 600;
+		}
+	}
+
+	.bw-woo-product-filters__category-count {
+		color: #64748b;
+		font-variant-numeric: tabular-nums;
+	}
+
+	.bw-woo-product-filters__price-fields {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.bw-woo-product-filters__price-input {
+		width: 84px;
+		padding: 8px 10px;
+		border: 1px solid #cbd5e1;
+		border-radius: 4px;
+		font-size: 14px;
+	}
+
+	.bw-woo-product-filters__submit {
+		padding: 8px 16px;
+		background-color: #1e293b;
+		border: 0;
+		border-radius: 4px;
+		color: #fff;
+		font-size: 14px;
+		font-weight: 600;
+		cursor: pointer;
+
+		&:hover,
+		&:focus {
+			background-color: #0f172a;
+		}
+	}
+
+	.bw-woo-product-filters__group--collapsible {
+		> .bw-woo-product-filters__group-title {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 0;
+			padding: 4px 0;
+			cursor: pointer;
+		}
+
+		&[open] > .bw-woo-product-filters__group-title {
+			margin-bottom: 8px;
+		}
+	}
+
+	.bw-woo-product-filters__active {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px;
+		margin: 0 0 16px;
+		padding: 0;
+		list-style: none;
+	}
+
+	.bw-woo-product-filters__chip-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		padding: 3px 10px;
+		background-color: #f1f5f9;
+		border-radius: 999px;
+		color: inherit;
+		font-size: 13px;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			background-color: #e2e8f0;
+		}
+	}
+
+	.bw-woo-product-filters__clear {
+		display: inline-block;
+		font-size: 13px;
+	}
+}

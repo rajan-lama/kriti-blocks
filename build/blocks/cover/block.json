@@ -1,0 +1,112 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/cover",
+  "version": "0.1.0",
+  "title": "BW Cover",
+  "category": "kriti-blocks",
+  "icon": "format-image",
+  "description": "A full-bleed background image section with overlay and content.",
+  "example": {},
+  "keywords": [
+    "cover",
+    "hero",
+    "background",
+    "banner"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "backgroundUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundId": {
+      "type": "number",
+      "default": 0
+    },
+    "overlayColor": {
+      "type": "string",
+      "default": ""
+    },
+    "overlayOpacity": {
+      "type": "number",
+      "default": 50
+    },
+    "minHeight": {
+      "type": "number",
+      "default": 400
+    },
+    "backgroundSize": {
+      "type": "string",
+      "default": "cover"
+    },
+    "backgroundPosition": {
+      "type": "string",
+      "default": "center"
+    },
+    "contentAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "tagType": {
+      "type": "string",
+      "default": "div"
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    },
+    "parallax": {
+      "type": "boolean"
+    },
+    "focalPoint": {
+      "type": "object"
+    },
+    "overlayGradFrom": {
+      "type": "string"
+    },
+    "overlayGradTo": {
+      "type": "string"
+    },
+    "overlayGradAngle": {
+      "type": "number"
+    },
+    "verticalAlign": {
+      "type": "string",
+      "enum": [
+        "top",
+        "bottom"
+      ]
+    },
+    "contentMaxWidth": {
+      "type": "number"
+    },
+    "heightTablet": {
+      "type": "number"
+    },
+    "heightMobile": {
+      "type": "number"
+    },
+    "bgVideoUrl": {
+      "type": "string"
+    },
+    "scrollIndicator": {
+      "type": "boolean"
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

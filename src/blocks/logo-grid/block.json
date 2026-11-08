@@ -1,0 +1,64 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/logo-grid",
+  "version": "0.1.0",
+  "title": "BW Logo Grid",
+  "category": "kriti-blocks",
+  "icon": "grid-view",
+  "description": "A responsive grid of client or partner logos with a grayscale hover effect.",
+  "example": {},
+  "keywords": ["logo", "logos", "grid", "clients", "partners", "trust"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "attributes": {
+    "logos": {
+      "type": "array",
+      "default": []
+    },
+    "logoColumns": {
+      "type": "number",
+      "default": 4
+    },
+    "grayscale": {
+      "type": "boolean",
+      "default": true
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    },
+    "colsTablet": {
+      "type": "number"
+    },
+    "colsMobile": {
+      "type": "number"
+    },
+    "logoHeight": {
+      "type": "number"
+    },
+    "logoGap": {
+      "type": "number"
+    },
+    "logoOpacity": {
+      "type": "number"
+    },
+    "logoAlign": {
+      "type": "string",
+      "enum": ["left", "right"]
+    },
+    "carouselMode": {
+      "type": "boolean"
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

@@ -1,0 +1,20 @@
+.wp-block-kriti-blocks-pricing-column {
+  outline: 1px dashed #1e1e1e26;
+  outline-offset: 4px;
+
+  .bw-pricing-features-hint {
+    margin: 0 0 24px;
+    font-style: italic;
+    opacity: 0.7;
+  }
+
+  .bw-pricing-button {
+    background-color: #e5e7eb;
+    color: #111827;
+
+    &:hover,
+    &:focus {
+      background-color: #d1d5db;
+    }
+  }
+}

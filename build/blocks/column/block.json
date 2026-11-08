@@ -1,0 +1,59 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/column",
+  "version": "0.1.0",
+  "title": "BW Column",
+  "category": "kriti-blocks",
+  "icon": "column",
+  "description": "Sample block for Kriti Blocks.",
+  "example": {},
+  "parent": [
+    "kriti-blocks/columns"
+  ],
+  "keywords": [
+    "column"
+  ],
+  "supports": {
+    "html": false,
+    "inserter": false,
+    "reusable": false
+  },
+  "attributes": {
+    "colMd": {
+      "type": "string",
+      "default": "col-12"
+    },
+    "colTablet": {
+      "type": "number"
+    },
+    "colMobile": {
+      "type": "number"
+    },
+    "selfAlign": {
+      "type": "string",
+      "enum": [
+        "start",
+        "center",
+        "end"
+      ]
+    },
+    "mobileOrder": {
+      "type": "string",
+      "enum": [
+        "first",
+        "last"
+      ]
+    },
+    "sticky": {
+      "type": "boolean"
+    },
+    "stickyTop": {
+      "type": "number"
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

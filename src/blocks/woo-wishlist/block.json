@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/woo-wishlist",
+  "version": "0.1.0",
+  "title": "BW Wishlist",
+  "category": "kriti-blocks",
+  "icon": "heart",
+  "description": "Shows the products a visitor saved with the wishlist heart. Saved in their own browser. Requires WooCommerce.",
+  "example": {},
+  "keywords": ["woocommerce", "wishlist", "favorites", "saved", "products"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "attributes": {
+    "title": { "type": "string", "default": "" },
+    "emptyText": { "type": "string", "default": "" },
+    "columns": { "type": "number", "default": 3 },
+    "showAddToCart": { "type": "boolean", "default": true },
+    "htmlId": { "type": "string", "default": "" },
+    "extraClass": { "type": "string", "default": "" }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}

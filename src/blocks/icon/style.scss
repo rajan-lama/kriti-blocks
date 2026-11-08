@@ -1,0 +1,92 @@
+.wp-block-kriti-blocks-icon {
+  --bw-icon-size: 32px;
+  --bw-icon-color: #222;
+  --bw-icon-bg: transparent;
+  --bw-icon-padding: 0;
+  --bw-icon-radius: 0;
+}
+
+.wp-block-kriti-blocks-icon svg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--bw-icon-size);
+  height: var(--bw-icon-size);
+  color: var(--bw-icon-color);
+  background: var(--bw-icon-bg);
+  padding: var(--bw-icon-padding);
+  border-radius: var(--bw-icon-radius);
+  transform: rotate(var(--bw-icon-rot, 0deg));
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+// Optional hover colors fall back to the normal colors.
+.wp-block-kriti-blocks-icon:hover svg {
+  color: var(--bw-icon-hover-color, var(--bw-icon-color));
+  background: var(--bw-icon-hover-bg, var(--bw-icon-bg));
+}
+
+.wp-block-kriti-blocks-icon .bw-icon-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wp-block-kriti-blocks-icon .bw-icon-inner {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.wp-block-kriti-blocks-icon.kb-icon--label-right .bw-icon-inner {
+  flex-direction: row;
+}
+
+@media (max-width: 1024px) {
+  .wp-block-kriti-blocks-icon.kb-icon--rs[style*='--bw-icon-size-t'] svg {
+    width: var(--bw-icon-size-t);
+    height: var(--bw-icon-size-t);
+  }
+}
+
+@media (max-width: 767px) {
+  .wp-block-kriti-blocks-icon.kb-icon--rs[style*='--bw-icon-size-m'] svg {
+    width: var(--bw-icon-size-m);
+    height: var(--bw-icon-size-m);
+  }
+}
+
+.bw-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  gap: 1px;
+
+  .icon-item button {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon {
+    color: #2380b7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 40px;
+      height: 40px;
+      border: 1px solid #89d1ff;
+      width: 40px;
+      height: 40px;
+      display: block;
+    }
+  }
+}

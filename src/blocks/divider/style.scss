@@ -1,0 +1,66 @@
+.wp-block-kriti-blocks-divider {
+	.bw-divider {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
+// Optional text or icon in the middle of the line.
+.wp-block-kriti-blocks-divider {
+	.bw-divider-labeled {
+		display: flex;
+		align-items: center;
+		gap: 0.75em;
+	}
+
+	.bw-divider-line {
+		flex: 1 1 0;
+		min-width: 0;
+		height: 0;
+	}
+
+	.bw-divider-label {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4em;
+		color: var( --kb-dv-label, currentColor );
+	}
+}
+
+@media (max-width: 1024px) {
+	.kb-dv--rw[style*='--kb-dv-w-t'] {
+		.bw-divider,
+		.bw-divider-labeled {
+			width: var( --kb-dv-w-t ) !important;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.kb-dv--rw[style*='--kb-dv-w-m'] {
+		.bw-divider,
+		.bw-divider-labeled {
+			width: var( --kb-dv-w-m ) !important;
+		}
+	}
+
+	.kb-dv--rw[style*='--kb-dv-h-m'] {
+		.bw-divider[style*='border-top'],
+		.bw-divider-line {
+			border-top-width: var( --kb-dv-h-m ) !important;
+		}
+
+		.bw-divider[style*='linear-gradient'] {
+			height: var( --kb-dv-h-m ) !important;
+		}
+	}
+}
+
+.wp-block-kriti-blocks-divider .bw-divider-shape {
+	display: block;
+	line-height: 0;
+
+	svg {
+		display: block;
+	}
+}

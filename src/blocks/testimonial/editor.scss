@@ -1,0 +1,12 @@
+.wp-block-kriti-blocks-testimonial {
+	outline: 1px dashed #1e1e1e26;
+	outline-offset: 4px;
+
+	.bw-testimonial-meta {
+		flex-wrap: wrap;
+
+		.components-button.is-secondary {
+			margin-top: 8px;
+		}
+	}
+}

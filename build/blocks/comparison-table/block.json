@@ -1,0 +1,114 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/comparison-table",
+  "version": "0.1.0",
+  "title": "BW Comparison Table",
+  "category": "kriti-blocks",
+  "icon": "editor-table",
+  "description": "Compare products or options across a list of features with check and cross markers.",
+  "example": {},
+  "keywords": [
+    "comparison",
+    "table",
+    "pricing",
+    "matrix",
+    "features"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "featureColLabel": {
+      "type": "string",
+      "default": "Features"
+    },
+    "products": {
+      "type": "array",
+      "default": [
+        {
+          "name": "",
+          "price": ""
+        },
+        {
+          "name": "",
+          "price": ""
+        }
+      ]
+    },
+    "rows": {
+      "type": "array",
+      "default": []
+    },
+    "highlightIndex": {
+      "type": "number",
+      "default": -1
+    },
+    "accentColor": {
+      "type": "string",
+      "default": "#4f46e5"
+    },
+    "stickyHeader": {
+      "type": "boolean"
+    },
+    "stickyOffset": {
+      "type": "number"
+    },
+    "stickyFirstCol": {
+      "type": "boolean"
+    },
+    "cellAlign": {
+      "type": "string",
+      "enum": [
+        "left",
+        "center",
+        "right"
+      ]
+    },
+    "striped": {
+      "type": "boolean"
+    },
+    "rowHover": {
+      "type": "boolean"
+    },
+    "density": {
+      "type": "string",
+      "enum": [
+        "compact",
+        "default",
+        "comfortable"
+      ]
+    },
+    "hideNo": {
+      "type": "boolean"
+    },
+    "yesColor": {
+      "type": "string"
+    },
+    "noColor": {
+      "type": "string"
+    },
+    "headerBg": {
+      "type": "string"
+    },
+    "headerColor": {
+      "type": "string"
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

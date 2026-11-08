@@ -1,0 +1,83 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/timeline",
+  "version": "0.1.0",
+  "title": "BW Timeline",
+  "category": "kriti-blocks",
+  "icon": "editor-ol",
+  "description": "A vertical timeline of dated entries for showing history, roadmaps, and step-by-step stories.",
+  "example": {},
+  "keywords": [
+    "timeline",
+    "history",
+    "roadmap",
+    "process",
+    "schedule"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "timelineColor": {
+      "type": "string",
+      "default": ""
+    },
+    "timelineLayout": {
+      "type": "string",
+      "enum": [
+        "left",
+        "right",
+        "alternate"
+      ]
+    },
+    "lineStyle": {
+      "type": "string",
+      "enum": [
+        "solid",
+        "dashed",
+        "dotted"
+      ]
+    },
+    "lineWidth": {
+      "type": "number"
+    },
+    "lineColor": {
+      "type": "string"
+    },
+    "markerStyle": {
+      "type": "string",
+      "enum": [
+        "dot",
+        "ring",
+        "square"
+      ]
+    },
+    "markerSize": {
+      "type": "number"
+    },
+    "dateStyle": {
+      "type": "string",
+      "enum": [
+        "plain",
+        "badge"
+      ]
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

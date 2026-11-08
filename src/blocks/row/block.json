@@ -1,0 +1,58 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/row",
+  "version": "0.1.0",
+  "title": "BW Row",
+  "category": "kriti-blocks",
+  "icon": "screenoptions",
+  "description": "Flexible flexbox layout container for arranging blocks horizontally.",
+  "example": {},
+  "keywords": ["row", "flex", "layout"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "attributes": {
+    "tagType": {
+      "type": "string",
+      "default": "div"
+    },
+    "gap": {
+      "type": "number",
+      "default": 20
+    },
+    "minHeight": {
+      "type": "string",
+      "default": ""
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    },
+    "equalItems": {
+      "type": "boolean"
+    },
+    "stackOn": {
+      "type": "string",
+      "enum": ["tablet", "mobile"]
+    },
+    "stackReverse": {
+      "type": "boolean"
+    },
+    "gapTablet": {
+      "type": "number"
+    },
+    "gapMobile": {
+      "type": "number"
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

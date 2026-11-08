@@ -1,0 +1,16 @@
+.wp-block-kriti-blocks-cover {
+	outline: 1px dashed #1e1e1e26;
+	outline-offset: 4px;
+
+	.bw-cover-content {
+		width: 100%;
+
+		> .block-editor-inner-blocks {
+			width: 100%;
+
+			> .block-editor-block-list__layout {
+				padding: 24px;
+			}
+		}
+	}
+}

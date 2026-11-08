@@ -1,0 +1,133 @@
+.wp-block-kriti-blocks-steps {
+	margin: 0;
+
+	.bw-step {
+		display: flex;
+		align-items: flex-start;
+		gap: 18px;
+	}
+
+	.bw-step + .bw-step {
+		margin-top: 24px;
+	}
+
+	.bw-step-number {
+		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background-color: #4f46e5;
+		color: #ffffff;
+		font-size: 16px;
+		font-weight: 700;
+	}
+
+	.bw-step-title {
+		font-size: 20px;
+		line-height: 1.3;
+		margin: 4px 0 8px;
+	}
+
+	.bw-step-description {
+		font-size: 15px;
+		line-height: 1.65;
+		color: #374151;
+		margin: 0;
+		white-space: pre-line;
+	}
+
+	&.bw-steps-layout-horizontal {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 32px;
+
+		.bw-step {
+			flex: 1 1 200px;
+		}
+
+		.bw-step + .bw-step {
+			margin-top: 0;
+		}
+	}
+}
+
+// Options (each rule only applies when its class or variable is set).
+.wp-block-kriti-blocks-steps {
+	.bw-step {
+		position: relative;
+	}
+
+	.bw-step-number {
+		width: var( --kb-steps-num, 40px );
+		height: var( --kb-steps-num, 40px );
+		background-color: var( --kb-steps-num-bg, #4f46e5 );
+		color: var( --kb-steps-num-color, #ffffff );
+	}
+
+	.bw-step-title a {
+		color: inherit;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+
+	&.bw-steps--num-square .bw-step-number {
+		border-radius: 0;
+	}
+
+	&.bw-steps--num-rounded .bw-step-number {
+		border-radius: 10px;
+	}
+
+	&.bw-steps--num-plain .bw-step-number {
+		background-color: transparent;
+		color: var( --kb-steps-num-bg, #4f46e5 );
+		font-size: 28px;
+	}
+
+	&.bw-steps--center .bw-step {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	// Connector line between the markers.
+	&.bw-steps--connector:not( .bw-steps-layout-horizontal ):not( .bw-steps--center ) .bw-step:not( :last-child )::after {
+		content: '';
+		position: absolute;
+		top: calc( var( --kb-steps-num, 40px ) + 4px );
+		bottom: -20px;
+		left: calc( var( --kb-steps-num, 40px ) / 2 - 1px );
+		width: 2px;
+		background: var( --kb-steps-line, #e5e7eb );
+	}
+
+	// Horizontal connectors put the marker above the text so the line does
+	// not cross it.
+	&.bw-steps--connector.bw-steps-layout-horizontal {
+		.bw-step {
+			flex-direction: column;
+			gap: 14px;
+		}
+
+		.bw-step:not( :last-child )::after {
+			content: '';
+			position: absolute;
+			top: calc( var( --kb-steps-num, 40px ) / 2 - 1px );
+			left: calc( var( --kb-steps-num, 40px ) + 12px );
+			right: -20px;
+			height: 2px;
+			background: var( --kb-steps-line, #e5e7eb );
+		}
+	}
+
+	&.bw-steps--connector.bw-steps-layout-horizontal.bw-steps--center .bw-step:not( :last-child )::after {
+		left: calc( 50% + var( --kb-steps-num, 40px ) / 2 + 12px );
+	}
+}

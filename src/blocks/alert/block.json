@@ -1,0 +1,75 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/alert",
+  "version": "0.1.0",
+  "title": "BW Alert",
+  "category": "kriti-blocks",
+  "icon": "warning",
+  "description": "A notice box for info, success, warning, and error messages.",
+  "example": {},
+  "keywords": ["alert", "notice", "message", "info", "warning"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "attributes": {
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": ".bw-alert-content",
+      "default": ""
+    },
+    "alertType": {
+      "type": "string",
+      "default": "info"
+    },
+    "showIcon": {
+      "type": "boolean",
+      "default": true
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    },
+    "alertTitle": {
+      "type": "string",
+      "source": "html",
+      "selector": ".bw-alert-title"
+    },
+    "showTitle": {
+      "type": "boolean"
+    },
+    "customIcon": {
+      "type": "string",
+      "enum": ["bell", "star", "heart", "bolt", "shield", "question"]
+    },
+    "iconSize": {
+      "type": "number"
+    },
+    "accentColor": {
+      "type": "string"
+    },
+    "dismissible": {
+      "type": "boolean"
+    },
+    "rememberDismiss": {
+      "type": "boolean"
+    },
+    "dismissKey": {
+      "type": "string"
+    },
+    "dismissDays": {
+      "type": "number"
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

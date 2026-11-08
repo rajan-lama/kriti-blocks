@@ -1,0 +1,41 @@
+.wp-block-kriti-blocks-stat {
+	margin: 0;
+	padding: 8px 12px;
+
+	.bw-stat-value {
+		font-size: var( --kb-stat-size, 52px );
+		line-height: 1.1;
+		font-weight: 800;
+		color: var( --kb-stat-value, #111827 );
+		margin-bottom: 8px;
+	}
+
+	.bw-stat-prefix,
+	.bw-stat-suffix {
+		font-weight: 800;
+	}
+
+	.bw-stat-label {
+		font-size: 15px;
+		line-height: 1.4;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		color: var( --kb-stat-label, #6b7280 );
+		margin: 0;
+	}
+
+	.bw-stat-bar {
+		height: 8px;
+		margin: 0 0 10px;
+		overflow: hidden;
+		border-radius: 999px;
+		background: rgba( 0, 0, 0, 0.1 );
+	}
+
+	.bw-stat-bar-fill {
+		display: block;
+		height: 100%;
+		border-radius: inherit;
+		background: var( --kb-stat-bar, #4f46e5 );
+	}
+}

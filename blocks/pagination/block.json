@@ -1,0 +1,120 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/pagination",
+  "version": "0.1.0",
+  "title": "BW Pagination",
+  "category": "kriti-blocks",
+  "icon": "ellipsis",
+  "description": "Displays pagination links for the current archive or query loop.",
+  "example": {},
+  "keywords": [
+    "pagination",
+    "paging",
+    "next",
+    "previous",
+    "archive"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "showPrevNext": {
+      "type": "boolean",
+      "default": true
+    },
+    "prevText": {
+      "type": "string",
+      "default": ""
+    },
+    "nextText": {
+      "type": "string",
+      "default": ""
+    },
+    "showNumbers": {
+      "type": "boolean",
+      "default": true
+    },
+    "midSize": {
+      "type": "number",
+      "default": 1
+    },
+    "endSize": {
+      "type": "number",
+      "default": 1
+    },
+    "justify": {
+      "type": "string",
+      "default": "left"
+    },
+    "paginationStyle": {
+      "type": "string",
+      "default": "outline"
+    },
+    "size": {
+      "type": "string",
+      "default": "md"
+    },
+    "arrowStyle": {
+      "type": "string",
+      "default": "text"
+    },
+    "showFirstLast": {
+      "type": "boolean",
+      "default": false
+    },
+    "showPageInfo": {
+      "type": "boolean",
+      "default": false
+    },
+    "linkColor": {
+      "type": "string",
+      "default": ""
+    },
+    "linkBg": {
+      "type": "string",
+      "default": ""
+    },
+    "linkBorder": {
+      "type": "string",
+      "default": ""
+    },
+    "hoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "hoverBg": {
+      "type": "string",
+      "default": ""
+    },
+    "hoverBorder": {
+      "type": "string",
+      "default": ""
+    },
+    "currentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "currentBg": {
+      "type": "string",
+      "default": ""
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

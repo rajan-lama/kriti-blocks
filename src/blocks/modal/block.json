@@ -1,0 +1,100 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/modal",
+  "version": "0.1.0",
+  "title": "BW Modal",
+  "category": "kriti-blocks",
+  "icon": "external",
+  "description": "A trigger button that opens an accessible dialog with inner content.",
+  "example": {},
+  "keywords": ["modal", "dialog", "popup", "lightbox", "overlay"],
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "triggerText": {
+      "type": "string",
+      "default": "Open modal"
+    },
+    "triggerBackground": {
+      "type": "string",
+      "default": "#4f46e5"
+    },
+    "triggerColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "panelWidth": {
+      "type": "number",
+      "default": 560
+    },
+    "position": {
+      "type": "string",
+      "default": "center"
+    },
+    "panelBackground": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "panelRadius": {
+      "type": "number",
+      "default": 12
+    },
+    "showCloseButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "closeOnBackdrop": {
+      "type": "boolean",
+      "default": true
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    },
+    "overlayColor": {
+      "type": "string"
+    },
+    "overlayBlur": {
+      "type": "number"
+    },
+    "maxHeight": {
+      "type": "number"
+    },
+    "animation": {
+      "type": "string",
+      "enum": ["fade", "zoom", "slide", "none"]
+    },
+    "hideTrigger": {
+      "type": "boolean"
+    },
+    "autoOpen": {
+      "type": "boolean"
+    },
+    "autoOpenDelay": {
+      "type": "number"
+    },
+    "exitIntent": {
+      "type": "boolean"
+    },
+    "scrollOpen": {
+      "type": "number"
+    },
+    "showOnceDays": {
+      "type": "number"
+    },
+    "triggerSelector": {
+      "type": "string"
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

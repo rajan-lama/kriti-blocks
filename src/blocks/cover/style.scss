@@ -1,0 +1,10 @@
+@use '../../shared/kbsb-cover';
+
+.wp-block-kriti-blocks-cover {
+	position: relative;
+	overflow: hidden;
+
+	.bw-cover-content {
+		width: 100%;
+	}
+}

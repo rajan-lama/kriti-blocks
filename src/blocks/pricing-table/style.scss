@@ -1,0 +1,77 @@
+.wp-block-kriti-blocks-pricing-table {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: var(--kb-pt-gap, 24px);
+
+  > .wp-block-kriti-blocks-pricing-column {
+    flex: 1 1 240px;
+    min-width: 0;
+  }
+
+  // Billing toggle. Hidden without JavaScript, because it would do nothing.
+  .kb-pt__toggle {
+    display: none;
+    flex: 0 0 100%;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .kb-js & .kb-pt__toggle {
+    display: flex;
+  }
+
+  .kb-pt__toggle-btn {
+    padding: 8px 18px;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    opacity: 0.6;
+
+    &[aria-pressed='true'] {
+      opacity: 1;
+      font-weight: 600;
+    }
+  }
+
+  // Options (each rule only applies when its class is present).
+  &.kb-pt--natural {
+    align-items: flex-start;
+  }
+
+  @media (min-width: 768px) {
+    &.kb-pt--cols > .wp-block-kriti-blocks-pricing-column {
+      flex: 0 1
+        calc(
+          (100% - (var(--kb-pt-cols) - 1) * var(--kb-pt-gap, 24px)) /
+            var(--kb-pt-cols)
+        );
+    }
+  }
+
+  @media (max-width: 1024px) {
+    &.kb-pt--stack-tablet {
+      flex-direction: column;
+
+      > .wp-block-kriti-blocks-pricing-column {
+        flex: 0 0 auto;
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    &.kb-pt--stack-mobile {
+      flex-direction: column;
+
+      > .wp-block-kriti-blocks-pricing-column {
+        flex: 0 0 auto;
+        width: 100%;
+      }
+    }
+  }
+}

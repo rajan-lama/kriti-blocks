@@ -1,0 +1,99 @@
+.wp-block-kriti-blocks-rating {
+  --bw-rating-size: 22px;
+  --bw-rating-color: #f59e0b;
+  --bw-rating-empty: #e5e7eb;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.bw-rating--small {
+  --bw-rating-size: 16px;
+}
+
+.bw-rating--medium {
+  --bw-rating-size: 22px;
+}
+
+.bw-rating--large {
+  --bw-rating-size: 30px;
+}
+
+.bw-rating__stars {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--kb-rating-gap, 2px);
+}
+
+.bw-rating__star {
+  position: relative;
+  display: inline-block;
+  width: var(--bw-rating-size);
+  height: var(--bw-rating-size);
+}
+
+.bw-rating__icon {
+  display: block;
+  width: var(--bw-rating-size);
+  height: var(--bw-rating-size);
+  max-width: none;
+  fill: currentColor;
+
+  &--empty {
+    color: var(--bw-rating-empty);
+  }
+
+  &--filled {
+    color: var(--bw-rating-color);
+  }
+}
+
+.bw-rating__fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.bw-rating__value {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--kb-rating-value, #111827);
+}
+
+.bw-rating__label {
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--kb-rating-label, #6b7280);
+}
+
+.bw-rating--label-before .bw-rating__label {
+  order: -1;
+}
+
+.bw-rating--label-below .bw-rating__label {
+  flex-basis: 100%;
+}
+
+// Visitor voting.
+.bw-rating--voting .bw-rating__star {
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+}
+
+.bw-rating__status {
+  font-size: 0.85em;
+  opacity: 0.8;
+
+  &:empty {
+    display: none;
+  }
+}

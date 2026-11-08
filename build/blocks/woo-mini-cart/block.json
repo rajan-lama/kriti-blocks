@@ -1,0 +1,101 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/woo-mini-cart",
+  "version": "0.1.0",
+  "title": "BW Mini Cart",
+  "category": "kriti-blocks",
+  "icon": "cart",
+  "description": "Displays a collapsible WooCommerce mini cart that stays in sync with cart updates. Requires WooCommerce.",
+  "example": {},
+  "keywords": [
+    "woocommerce",
+    "cart",
+    "mini cart",
+    "shop",
+    "store"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "toggleText": {
+      "type": "string",
+      "default": ""
+    },
+    "showToggle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showCount": {
+      "type": "boolean",
+      "default": true
+    },
+    "openByDefault": {
+      "type": "boolean",
+      "default": false
+    },
+    "display": {
+      "type": "string",
+      "default": "inline"
+    },
+    "drawerSide": {
+      "type": "string",
+      "default": "right"
+    },
+    "icon": {
+      "type": "string",
+      "default": "none"
+    },
+    "countStyle": {
+      "type": "string",
+      "default": "text"
+    },
+    "showSubtotal": {
+      "type": "boolean",
+      "default": false
+    },
+    "hideViewCart": {
+      "type": "boolean",
+      "default": false
+    },
+    "hideCheckout": {
+      "type": "boolean",
+      "default": false
+    },
+    "emptyText": {
+      "type": "string",
+      "default": ""
+    },
+    "toggleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "toggleTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}

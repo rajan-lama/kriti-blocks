@@ -1,0 +1,144 @@
+.wp-block-kriti-blocks-team-member {
+	margin: 0;
+	padding: 32px 28px;
+	background-color: #ffffff;
+	border: 1px solid #e5e7eb;
+	border-radius: 12px;
+
+	.bw-team-member-photo-wrap {
+		display: block;
+		margin-bottom: 18px;
+	}
+
+	.bw-team-member-photo {
+		width: 112px;
+		height: 112px;
+		border-radius: 50%;
+		object-fit: cover;
+	}
+
+	.bw-team-member-photo-square {
+		border-radius: 8px;
+	}
+
+	.bw-team-member-name {
+		font-size: 22px;
+		line-height: 1.3;
+		margin: 0 0 6px;
+	}
+
+	.bw-team-member-role {
+		font-size: 13px;
+		line-height: 1.4;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		color: #6b7280;
+		margin: 0 0 14px;
+	}
+
+	.bw-team-member-bio {
+		font-size: 15px;
+		line-height: 1.65;
+		color: #374151;
+		margin: 0;
+	}
+}
+
+// Options (each rule only applies when its class or element is present).
+.wp-block-kriti-blocks-team-member {
+	.bw-team-member-photo {
+		width: var( --kb-tm-photo, 112px );
+		height: var( --kb-tm-photo, 112px );
+	}
+
+	.bw-team-member-name a {
+		color: inherit;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+
+	&.bw-team-member--grayscale .bw-team-member-photo {
+		filter: grayscale( 1 );
+		transition: filter 0.3s ease;
+	}
+
+	&.bw-team-member--grayscale:hover .bw-team-member-photo {
+		filter: none;
+	}
+
+	&.bw-team-member--photo-left,
+	&.bw-team-member--photo-right {
+		display: grid;
+		column-gap: 24px;
+		align-content: start;
+		text-align: left;
+
+		> * {
+			grid-column: 2;
+		}
+
+		> .bw-team-member-photo-wrap {
+			grid-column: 1;
+			grid-row: 1 / span 10;
+			margin-bottom: 0;
+		}
+	}
+
+	&.bw-team-member--photo-left {
+		grid-template-columns: auto minmax( 0, 1fr );
+	}
+
+	&.bw-team-member--photo-right {
+		grid-template-columns: minmax( 0, 1fr ) auto;
+
+		> * {
+			grid-column: 1;
+		}
+
+		> .bw-team-member-photo-wrap {
+			grid-column: 2;
+		}
+	}
+
+	@media ( max-width: 600px ) {
+		&.bw-team-member--photo-left,
+		&.bw-team-member--photo-right {
+			display: block;
+
+			> .bw-team-member-photo-wrap {
+				margin-bottom: 18px;
+			}
+		}
+	}
+
+	.bw-team-member-social {
+		margin: 16px 0 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			display: inline-block;
+			margin: 0 4px 8px;
+		}
+	}
+
+	.bw-team-member-social__link {
+		display: inline-block;
+		padding: 4px 12px;
+		border: 1px solid #e5e7eb;
+		border-radius: 999px;
+		color: inherit;
+		font-size: 13px;
+		line-height: 1.5;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			border-color: currentColor;
+		}
+	}
+}

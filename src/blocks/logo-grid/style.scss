@@ -1,0 +1,123 @@
+.wp-block-kriti-blocks-logo-grid {
+	margin: 0;
+	display: grid;
+	align-items: center;
+	gap: var( --kb-lg-gap, 20px );
+
+	.bw-logo-cell {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 12px;
+
+		img {
+			display: block;
+			max-width: 100%;
+			max-height: var( --kb-lg-h, 52px );
+			width: auto;
+			height: auto;
+			object-fit: contain;
+			opacity: var( --kb-lg-op, 0.75 );
+			filter: grayscale( 1 );
+			transition:
+				opacity 0.25s ease,
+				filter 0.25s ease;
+
+			&:hover {
+				opacity: 1;
+				filter: none;
+			}
+		}
+	}
+
+	&.bw-logo-grid-color .bw-logo-cell img {
+		opacity: 1;
+		filter: none;
+	}
+}
+
+@each $cols in (2, 3, 4, 5, 6) {
+	.wp-block-kriti-blocks-logo-grid.bw-logo-cols-#{ $cols } {
+		grid-template-columns: repeat( $cols, 1fr );
+	}
+}
+
+@media (max-width: 1024px) {
+	.wp-block-kriti-blocks-logo-grid.bw-logo-cols-4,
+	.wp-block-kriti-blocks-logo-grid.bw-logo-cols-5,
+	.wp-block-kriti-blocks-logo-grid.bw-logo-cols-6 {
+		grid-template-columns: repeat( 3, 1fr );
+	}
+}
+
+@media (max-width: 767px) {
+	.wp-block-kriti-blocks-logo-grid.bw-logo-cols-3,
+	.wp-block-kriti-blocks-logo-grid.bw-logo-cols-4,
+	.wp-block-kriti-blocks-logo-grid.bw-logo-cols-5,
+	.wp-block-kriti-blocks-logo-grid.bw-logo-cols-6 {
+		grid-template-columns: repeat( 2, 1fr );
+	}
+}
+
+.wp-block-kriti-blocks-logo-grid {
+	.bw-logo-cell a {
+		display: inline-flex;
+	}
+
+	&.kb-lg--left .bw-logo-cell {
+		justify-content: flex-start;
+	}
+
+	&.kb-lg--right .bw-logo-cell {
+		justify-content: flex-end;
+	}
+}
+
+@media (max-width: 1024px) {
+	.wp-block-kriti-blocks-logo-grid.kb-lg--rc[style*='--kb-lg-t'] {
+		grid-template-columns: repeat( var( --kb-lg-t ), 1fr );
+	}
+}
+
+@media (max-width: 767px) {
+	.wp-block-kriti-blocks-logo-grid.kb-lg--rc[style*='--kb-lg-m'] {
+		grid-template-columns: repeat( var( --kb-lg-m ), 1fr );
+	}
+}
+
+// Carousel mode: one scrollable row with snapping. Column classes still set
+// how many logos are visible at once.
+.wp-block-kriti-blocks-logo-grid.kb-lg--strip {
+	display: flex;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	-webkit-overflow-scrolling: touch;
+	scrollbar-width: thin;
+
+	.bw-logo-cell {
+		flex: 0 0 calc( ( 100% - 3 * var( --kb-lg-gap, 20px ) ) / 4 );
+		scroll-snap-align: start;
+	}
+
+	&.bw-logo-cols-2 .bw-logo-cell {
+		flex-basis: calc( ( 100% - var( --kb-lg-gap, 20px ) ) / 2 );
+	}
+
+	&.bw-logo-cols-3 .bw-logo-cell {
+		flex-basis: calc( ( 100% - 2 * var( --kb-lg-gap, 20px ) ) / 3 );
+	}
+
+	&.bw-logo-cols-5 .bw-logo-cell {
+		flex-basis: calc( ( 100% - 4 * var( --kb-lg-gap, 20px ) ) / 5 );
+	}
+
+	&.bw-logo-cols-6 .bw-logo-cell {
+		flex-basis: calc( ( 100% - 5 * var( --kb-lg-gap, 20px ) ) / 6 );
+	}
+}
+
+@media (max-width: 767px) {
+	.wp-block-kriti-blocks-logo-grid.kb-lg--strip .bw-logo-cell {
+		flex-basis: calc( ( 100% - var( --kb-lg-gap, 20px ) ) / 2 );
+	}
+}

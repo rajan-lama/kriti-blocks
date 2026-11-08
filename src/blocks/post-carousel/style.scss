@@ -1,0 +1,294 @@
+.wp-block-kriti-blocks-post-carousel {
+	--bw-post-carousel-gap: 24px;
+	--bw-post-carousel-columns: 1;
+
+	position: relative;
+
+	.bw-post-carousel__viewport {
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.bw-post-carousel__track {
+		display: flex;
+		gap: var( --bw-post-carousel-gap );
+		margin: 0;
+		padding: 0 0 4px;
+		list-style: none;
+	}
+
+	.bw-post-carousel__slide {
+		flex: 0 0
+			calc(
+				(
+						100% - ( var( --bw-post-carousel-columns ) - 1 ) *
+							var( --bw-post-carousel-gap )
+					) /
+					var( --bw-post-carousel-columns )
+			);
+		scroll-snap-align: start;
+	}
+
+	.bw-post-carousel__card {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		overflow: hidden;
+		background-color: #fff;
+		border: 1px solid #e2e8f0;
+		border-radius: 10px;
+	}
+
+	.bw-post-carousel__image {
+		display: block;
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			aspect-ratio: var( --bw-post-carousel-ratio, 16 / 9 );
+			object-fit: cover;
+		}
+	}
+
+	.bw-post-carousel__body {
+		display: flex;
+		flex: 1 1 auto;
+		flex-direction: column;
+		gap: 8px;
+		padding: 18px;
+	}
+
+	.bw-post-carousel__title {
+		margin: 0;
+		font-size: 18px;
+		line-height: 1.35;
+
+		a {
+			color: inherit;
+			text-decoration: none;
+
+			&:hover,
+			&:focus {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.bw-post-carousel__meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+		color: #64748b;
+		font-size: 13px;
+	}
+
+	.bw-post-carousel__terms a {
+		color: inherit;
+	}
+
+	.bw-post-carousel__excerpt {
+		margin: 0;
+		line-height: 1.6;
+	}
+
+	.bw-post-carousel__more {
+		margin-top: auto;
+		font-weight: 600;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+
+	.bw-post-carousel__arrow {
+		position: absolute;
+		top: 40%;
+		display: none;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		padding: 0;
+		background-color: #fff;
+		border: 1px solid #cbd5e1;
+		border-radius: 50%;
+		color: #1e293b;
+		cursor: pointer;
+		box-shadow: 0 2px 6px rgb( 15 23 42 / 12% );
+
+		&:disabled {
+			opacity: 0.4;
+			cursor: default;
+		}
+
+		&:focus-visible {
+			outline: 2px solid currentcolor;
+			outline-offset: 2px;
+		}
+	}
+
+	.bw-post-carousel__arrow--prev {
+		left: -12px;
+	}
+
+	.bw-post-carousel__arrow--next {
+		right: -12px;
+	}
+
+	.bw-post-carousel__dots {
+		display: none;
+		gap: 8px;
+		justify-content: center;
+		margin: 16px 0 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.bw-post-carousel__dot {
+		width: 10px;
+		height: 10px;
+		padding: 0;
+		background-color: #cbd5e1;
+		border: 0;
+		border-radius: 50%;
+		cursor: pointer;
+
+		&.is-active {
+			background-color: #1e293b;
+		}
+	}
+
+	&.bw-post-carousel--js {
+		.bw-post-carousel__arrow {
+			display: inline-flex;
+		}
+
+		.bw-post-carousel__dots {
+			display: flex;
+		}
+	}
+
+	&.bw-post-carousel--empty .bw-post-carousel__empty {
+		margin: 0;
+		color: #64748b;
+	}
+
+	/* Card styles. Boxed is the default and has no modifier class. */
+	&.bw-post-carousel--card-plain .bw-post-carousel__card {
+		background-color: transparent;
+		border: 0;
+		border-radius: 0;
+	}
+
+	&.bw-post-carousel--card-plain .bw-post-carousel__body {
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+	&.bw-post-carousel--card-overlay .bw-post-carousel__card {
+		position: relative;
+		justify-content: flex-end;
+		min-height: 280px;
+		background-color: #0f172a;
+		border: 0;
+		color: #fff;
+		aspect-ratio: var( --bw-post-carousel-ratio, auto );
+	}
+
+	&.bw-post-carousel--card-overlay .bw-post-carousel__image {
+		position: absolute;
+		inset: 0;
+
+		img {
+			height: 100%;
+			aspect-ratio: auto;
+		}
+	}
+
+	&.bw-post-carousel--card-overlay .bw-post-carousel__body {
+		position: relative;
+		z-index: 1;
+		flex: 0 0 auto;
+		padding-top: 56px;
+		background: linear-gradient( to top, rgb( 15 23 42 / 88% ), rgb( 15 23 42 / 0% ) );
+
+		a,
+		.bw-post-carousel__meta,
+		.bw-post-carousel__excerpt {
+			color: #fff;
+		}
+	}
+
+	/* Hover effects. */
+	&.bw-post-carousel--hover-lift .bw-post-carousel__card {
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+		&:hover,
+		&:focus-within {
+			transform: translateY( -4px );
+			box-shadow: 0 10px 24px rgb( 15 23 42 / 14% );
+		}
+	}
+
+	&.bw-post-carousel--hover-zoom .bw-post-carousel__image {
+		overflow: hidden;
+
+		img {
+			transition: transform 0.35s ease;
+		}
+	}
+
+	&.bw-post-carousel--hover-zoom .bw-post-carousel__card:hover .bw-post-carousel__image img {
+		transform: scale( 1.06 );
+	}
+
+	@media ( prefers-reduced-motion: reduce ) {
+		&.bw-post-carousel--hover-lift .bw-post-carousel__card,
+		&.bw-post-carousel--hover-zoom .bw-post-carousel__image img {
+			transition: none;
+		}
+
+		&.bw-post-carousel--hover-lift .bw-post-carousel__card:hover,
+		&.bw-post-carousel--hover-zoom .bw-post-carousel__card:hover .bw-post-carousel__image img {
+			transform: none;
+		}
+	}
+
+	&.bw-post-carousel--cols-1 {
+		--bw-post-carousel-columns: 1;
+	}
+
+	&.bw-post-carousel--cols-2 {
+		--bw-post-carousel-columns: 2;
+	}
+
+	&.bw-post-carousel--cols-3 {
+		--bw-post-carousel-columns: 3;
+	}
+
+	&.bw-post-carousel--cols-4 {
+		--bw-post-carousel-columns: 4;
+	}
+
+	@media ( max-width: 1024px ) {
+		&.bw-post-carousel--cols-1,
+		&.bw-post-carousel--cols-2,
+		&.bw-post-carousel--cols-3,
+		&.bw-post-carousel--cols-4 {
+			--bw-post-carousel-columns: var( --bw-post-carousel-columns-tablet, 2 );
+		}
+	}
+
+	@media ( max-width: 600px ) {
+		&.bw-post-carousel--cols-1,
+		&.bw-post-carousel--cols-2,
+		&.bw-post-carousel--cols-3,
+		&.bw-post-carousel--cols-4 {
+			--bw-post-carousel-columns: var( --bw-post-carousel-columns-mobile, 1 );
+		}
+	}
+}

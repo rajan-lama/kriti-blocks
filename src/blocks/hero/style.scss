@@ -1,0 +1,20 @@
+@use '../../shared/kbsb-cover';
+
+.wp-block-kriti-blocks-hero {
+	position: relative;
+	box-sizing: border-box;
+	overflow: hidden;
+	padding: 0;
+
+	.bw-hero-content {
+		box-sizing: border-box;
+		width: 100%;
+		padding: 48px clamp( 20px, 4vw, 48px );
+	}
+
+	&.alignfull {
+		margin-left: calc( 50% - 50vw );
+		margin-right: calc( 50% - 50vw );
+		width: auto;
+	}
+}

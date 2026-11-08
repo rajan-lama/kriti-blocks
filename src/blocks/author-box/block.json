@@ -1,0 +1,92 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/author-box",
+  "version": "0.1.0",
+  "title": "BW Author Box",
+  "category": "kriti-blocks",
+  "icon": "adminUsers",
+  "description": "Displays the author of the current entry with avatar, bio, and archive link.",
+  "example": {},
+  "keywords": ["author", "profile", "bio", "byline"],
+  "usesContext": ["postId", "postType"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "attributes": {
+    "authorId": {
+      "type": "number",
+      "default": 0
+    },
+    "layout": {
+      "type": "string",
+      "default": "horizontal"
+    },
+    "headingLevel": {
+      "type": "number",
+      "default": 3
+    },
+    "showAvatar": {
+      "type": "boolean",
+      "default": true
+    },
+    "avatarSize": {
+      "type": "number",
+      "default": 96
+    },
+    "showBio": {
+      "type": "boolean",
+      "default": true
+    },
+    "showArchiveLink": {
+      "type": "boolean",
+      "default": true
+    },
+    "archiveLinkText": {
+      "type": "string",
+      "default": ""
+    },
+    "showRole": {
+      "type": "boolean",
+      "default": false
+    },
+    "showPostCount": {
+      "type": "boolean",
+      "default": false
+    },
+    "showWebsite": {
+      "type": "boolean",
+      "default": false
+    },
+    "showSocial": {
+      "type": "boolean",
+      "default": false
+    },
+    "avatarShape": {
+      "type": "string",
+      "default": "circle"
+    },
+    "linkStyle": {
+      "type": "string",
+      "default": "link"
+    },
+    "bioLength": {
+      "type": "number",
+      "default": 0
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

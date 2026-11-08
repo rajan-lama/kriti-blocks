@@ -1,0 +1,77 @@
+.wp-block-kriti-blocks-cta {
+  padding: 48px 32px;
+  border-radius: 8px;
+
+  .bw-cta-content {
+    max-width: var(--kb-cta-width, 720px);
+    margin-left: auto;
+    margin-right: auto;
+
+    > .block-editor-inner-blocks {
+      width: 100%;
+
+      > .block-editor-block-list__layout {
+        align-items: center;
+      }
+    }
+  }
+
+  // Options (each rule only applies when its class is present).
+  &.bw-cta--bg {
+    background-image: var(--kb-cta-bg-image);
+    background-size: cover;
+    background-position: center;
+  }
+
+  &.bw-cta--fixed {
+    background-attachment: fixed;
+  }
+
+  &.bw-cta--overlay {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--kb-cta-overlay);
+      opacity: var(--kb-cta-overlay-opacity, 0.5);
+      pointer-events: none;
+    }
+
+    .bw-cta-content {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  &.bw-cta--split .bw-cta-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 32px;
+    row-gap: 0;
+    align-items: center;
+    max-width: var(--kb-cta-width, 1100px);
+
+    > * {
+      grid-column: 1;
+    }
+
+    > :last-child:not(:first-child) {
+      grid-column: 2;
+      grid-row: 1 / span 20;
+      align-self: center;
+    }
+
+    @media (max-width: 700px) {
+      display: block;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce), (max-width: 1024px) {
+    &.bw-cta--fixed {
+      background-attachment: scroll;
+    }
+  }
+}

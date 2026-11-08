@@ -1,0 +1,38 @@
+.wp-block-kriti-blocks-pricing-table {
+  outline: 1px dashed #1e1e1e26;
+  outline-offset: 4px;
+
+  > .block-editor-inner-blocks > .block-editor-block-list__layout {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: var(--kb-pt-gap, 24px);
+
+    > .wp-block {
+      flex: 1 1 240px;
+      min-width: 0;
+    }
+  }
+}
+
+.wp-block-kriti-blocks-pricing-table {
+  &.kb-pt--natural
+    > .block-editor-inner-blocks
+    > .block-editor-block-list__layout {
+    align-items: flex-start;
+  }
+
+  &.kb-pt--cols
+    > .block-editor-inner-blocks
+    > .block-editor-block-list__layout {
+    gap: var(--kb-pt-gap, 24px);
+
+    > .wp-block {
+      flex: 0 1
+        calc(
+          (100% - (var(--kb-pt-cols) - 1) * var(--kb-pt-gap, 24px)) /
+            var(--kb-pt-cols)
+        );
+    }
+  }
+}

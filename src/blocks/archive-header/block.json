@@ -1,0 +1,71 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/archive-header",
+  "version": "0.1.0",
+  "title": "BW Archive Header",
+  "category": "kriti-blocks",
+  "icon": "archive",
+  "description": "Displays the title and description of the current archive.",
+  "example": {},
+  "keywords": ["archive", "title", "category", "tag", "author", "search"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "attributes": {
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "headingLevel": {
+      "type": "number",
+      "default": 1
+    },
+    "showPrefix": {
+      "type": "boolean",
+      "default": true
+    },
+    "showDescription": {
+      "type": "boolean",
+      "default": true
+    },
+    "textAlign": {
+      "type": "string",
+      "default": "left"
+    },
+    "showBreadcrumbs": {
+      "type": "boolean",
+      "default": false
+    },
+    "showPostCount": {
+      "type": "boolean",
+      "default": false
+    },
+    "bgImageId": {
+      "type": "number",
+      "default": 0
+    },
+    "overlayOpacity": {
+      "type": "number",
+      "default": 50
+    },
+    "minHeight": {
+      "type": "number",
+      "default": 0
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

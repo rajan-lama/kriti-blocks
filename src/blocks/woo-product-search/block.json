@@ -1,0 +1,85 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/woo-product-search",
+  "version": "0.1.0",
+  "title": "BW Product Search",
+  "category": "kriti-blocks",
+  "icon": "search",
+  "description": "Displays a search form scoped to WooCommerce products. Requires WooCommerce.",
+  "example": {},
+  "keywords": ["woocommerce", "product", "search", "shop", "store"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "attributes": {
+    "liveSearch": { "type": "boolean", "default": false },
+    "label": {
+      "type": "string",
+      "default": ""
+    },
+    "placeholder": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonText": {
+      "type": "string",
+      "default": ""
+    },
+    "showButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "categoryDropdown": {
+      "type": "boolean",
+      "default": false
+    },
+    "allCategoriesText": {
+      "type": "string",
+      "default": ""
+    },
+    "iconButton": {
+      "type": "boolean",
+      "default": false
+    },
+    "joined": {
+      "type": "boolean",
+      "default": false
+    },
+    "size": {
+      "type": "string",
+      "default": "medium"
+    },
+    "maxWidth": {
+      "type": "number",
+      "default": 0
+    },
+    "borderRadius": {
+      "type": "number",
+      "default": -1
+    },
+    "buttonColor": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}

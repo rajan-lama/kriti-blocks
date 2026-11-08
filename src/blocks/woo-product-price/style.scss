@@ -1,0 +1,46 @@
+.wp-block-kriti-blocks-woo-product-price {
+
+	.bw-woo-product-price__value {
+		display: inline-block;
+		font-weight: 600;
+		line-height: 1.3;
+
+		del {
+			opacity: 0.6;
+			font-weight: 400;
+			color: var( --bw-woo-price-regular-color, inherit );
+			text-decoration-color: var( --bw-woo-price-strike-color, currentcolor );
+		}
+
+		ins {
+			text-decoration: none;
+			color: var( --bw-woo-price-sale-color, inherit );
+		}
+	}
+
+	.bw-woo-product-price__prefix {
+		margin-right: 0.3em;
+		font-weight: 400;
+	}
+
+	.bw-woo-product-price__suffix {
+		margin-left: 0.4em;
+		font-size: 0.75em;
+		font-weight: 400;
+	}
+
+	&.bw-woo-product-price--no-strike .bw-woo-product-price__value del {
+		text-decoration: none;
+	}
+
+	&.bw-woo-product-price--stacked .bw-woo-product-price__value {
+		del,
+		ins {
+			display: block;
+		}
+	}
+
+	&.bw-woo-product-price--currency-scaled .woocommerce-Price-currencySymbol {
+		font-size: calc( 1em * var( --bw-woo-price-currency-scale, 1 ) );
+	}
+}

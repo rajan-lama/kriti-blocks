@@ -1,0 +1,114 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/back-to-top",
+  "version": "0.1.0",
+  "title": "BW Back To Top",
+  "category": "kriti-blocks",
+  "icon": "arrow-up",
+  "description": "A floating button that scrolls the page back to the top.",
+  "example": {},
+  "keywords": [
+    "back to top",
+    "scroll",
+    "to top",
+    "floating button"
+  ],
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "position": {
+      "type": "string",
+      "default": "bottom-right"
+    },
+    "offset": {
+      "type": "number",
+      "default": 24
+    },
+    "showAfter": {
+      "type": "number",
+      "default": 300
+    },
+    "buttonSize": {
+      "type": "number",
+      "default": 48
+    },
+    "iconSize": {
+      "type": "number",
+      "default": 20
+    },
+    "shape": {
+      "type": "string",
+      "default": "circle"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "#4f46e5"
+    },
+    "iconColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "ariaLabel": {
+      "type": "string",
+      "default": "Back to top"
+    },
+    "smooth": {
+      "type": "boolean",
+      "default": true
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    },
+    "hoverBackground": {
+      "type": "string"
+    },
+    "hoverIconColor": {
+      "type": "string"
+    },
+    "iconType": {
+      "type": "string",
+      "enum": [
+        "chevron",
+        "arrow",
+        "double"
+      ]
+    },
+    "label": {
+      "type": "string"
+    },
+    "scrollDuration": {
+      "type": "number"
+    },
+    "showProgress": {
+      "type": "boolean"
+    },
+    "progressColor": {
+      "type": "string"
+    },
+    "borderWidth": {
+      "type": "number"
+    },
+    "borderColor": {
+      "type": "string"
+    },
+    "shadowStyle": {
+      "type": "string",
+      "enum": [
+        "none",
+        "large"
+      ]
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

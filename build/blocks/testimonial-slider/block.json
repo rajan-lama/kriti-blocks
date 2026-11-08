@@ -1,0 +1,129 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/testimonial-slider",
+  "version": "0.1.0",
+  "title": "BW Testimonial Slider",
+  "category": "kriti-blocks",
+  "icon": "format-quote",
+  "description": "A carousel of customer testimonials with optional autoplay, arrows, and dots.",
+  "example": {},
+  "keywords": [
+    "testimonial",
+    "slider",
+    "carousel",
+    "reviews",
+    "social proof"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "slides": {
+      "type": "array",
+      "default": [
+        {
+          "id": 1,
+          "quote": "",
+          "authorName": "",
+          "authorRole": "",
+          "avatarUrl": "",
+          "avatarId": 0,
+          "avatarAlt": ""
+        },
+        {
+          "id": 2,
+          "quote": "",
+          "authorName": "",
+          "authorRole": "",
+          "avatarUrl": "",
+          "avatarId": 0,
+          "avatarAlt": ""
+        }
+      ]
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": true
+    },
+    "interval": {
+      "type": "number",
+      "default": 5000
+    },
+    "showArrows": {
+      "type": "boolean",
+      "default": true
+    },
+    "showDots": {
+      "type": "boolean",
+      "default": true
+    },
+    "showQuoteMark": {
+      "type": "boolean",
+      "default": true
+    },
+    "slidesPerView": {
+      "type": "number"
+    },
+    "loop": {
+      "type": "boolean"
+    },
+    "pauseOnHover": {
+      "type": "boolean"
+    },
+    "transition": {
+      "type": "string",
+      "enum": [
+        "slide",
+        "fade"
+      ]
+    },
+    "speed": {
+      "type": "number"
+    },
+    "arrowStyle": {
+      "type": "string",
+      "enum": [
+        "circle",
+        "square",
+        "plain"
+      ]
+    },
+    "dotStyle": {
+      "type": "string",
+      "enum": [
+        "dot",
+        "line"
+      ]
+    },
+    "accentColor": {
+      "type": "string"
+    },
+    "dotColor": {
+      "type": "string"
+    },
+    "arrowColor": {
+      "type": "string"
+    },
+    "arrowBg": {
+      "type": "string"
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

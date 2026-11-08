@@ -1,0 +1,49 @@
+/* Target the block editor container */
+/* .editor-styles-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.editor-styles-wrapper
+  :where(:not(.is-layout-flex, .is-layout-grid))
+  > .wp-block {
+  border: 1px dashed lightblue;
+  padding: 10px;
+}
+
+.block-editor-block-list__layout .block-editor-block-list__block.is-highlighted, .block-editor-block-list__layout .block-editor-block-list__block.is-highlighted~.is-multi-selected, .block-editor-block-list__layout .block-editor-block-list__block:not([contenteditable=true]):focus{
+  border: 1px dashed lightblue;
+}
+
+.wp-block.is-selected{
+  border: 1px dashed #007cba;
+}
+ */
+
+
+
+/* For a smaller viewport */
+@media (max-width: 768px) {
+    /* .editor-styles-wrapper {
+        max-width: 100%;
+        padding: 10px;
+    } */
+}
+
+/* The tab title carries the tooltip (a title attribute). It fills the whole tab button,
+   so hovering anywhere on the tab shows it. */
+.kriti-blocks-tab-panel .components-tab-panel__tabs-item {
+	padding: 0;
+}
+
+.kriti-blocks-tab-panel .kriti-blocks-tab-title {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 4px;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	padding: 0 16px;
+}

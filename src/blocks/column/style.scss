@@ -1,0 +1,52 @@
+// Per-column options. The column widths themselves (col-*) come from the
+// columns block.
+.wp-block-kriti-blocks-column {
+	&.kb-col--self-start {
+		align-self: flex-start;
+	}
+
+	&.kb-col--self-center {
+		align-self: center;
+	}
+
+	&.kb-col--self-end {
+		align-self: flex-end;
+	}
+
+	// Useful for sidebars; the parent row must not stretch the column.
+	&.kb-col--sticky {
+		position: sticky;
+		top: var( --kb-col-sticky-top, 20px );
+		align-self: flex-start;
+	}
+}
+
+@media ( max-width: 1024px ) {
+	@for $i from 1 through 12 {
+		.wp-block-kriti-blocks-column.kb-col-t-#{$i} {
+			flex: 0 0 auto;
+			width: calc( #{ $i } * 100% / 12 );
+		}
+	}
+
+	.wp-block-kriti-blocks-column.kb-col--sticky {
+		position: static;
+	}
+}
+
+@media ( max-width: 767px ) {
+	@for $i from 1 through 12 {
+		.wp-block-kriti-blocks-column.kb-col-m-#{$i} {
+			flex: 0 0 auto;
+			width: calc( #{ $i } * 100% / 12 );
+		}
+	}
+
+	.wp-block-kriti-blocks-column.kb-col--order-first {
+		order: -1;
+	}
+
+	.wp-block-kriti-blocks-column.kb-col--order-last {
+		order: 99;
+	}
+}

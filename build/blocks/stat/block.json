@@ -1,0 +1,103 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/stat",
+  "version": "0.1.0",
+  "title": "BW Stat",
+  "category": "kriti-blocks",
+  "icon": "chart-bar",
+  "description": "A single statistic with optional count-up animation for marketing sections.",
+  "example": {},
+  "keywords": [
+    "stat",
+    "stats",
+    "counter",
+    "number",
+    "metric"
+  ],
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "statNumber": {
+      "type": "string",
+      "default": ""
+    },
+    "statLabel": {
+      "type": "string",
+      "default": ""
+    },
+    "statPrefix": {
+      "type": "string",
+      "default": ""
+    },
+    "statSuffix": {
+      "type": "string",
+      "default": ""
+    },
+    "statAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "enableCount": {
+      "type": "boolean",
+      "default": true
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    },
+    "startValue": {
+      "type": "number"
+    },
+    "countDuration": {
+      "type": "number"
+    },
+    "decimals": {
+      "type": "number"
+    },
+    "separator": {
+      "type": "string",
+      "enum": [
+        "comma",
+        "space",
+        "dot",
+        "none"
+      ]
+    },
+    "easing": {
+      "type": "string",
+      "enum": [
+        "linear",
+        "inout"
+      ]
+    },
+    "valueColor": {
+      "type": "string"
+    },
+    "labelColor": {
+      "type": "string"
+    },
+    "valueSize": {
+      "type": "number"
+    },
+    "showProgress": {
+      "type": "boolean"
+    },
+    "progressValue": {
+      "type": "number"
+    },
+    "progressColor": {
+      "type": "string"
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "viewScript": "file:./view.js",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

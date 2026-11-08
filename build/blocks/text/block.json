@@ -1,0 +1,118 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/text",
+  "version": "0.1.0",
+  "title": "BW Text",
+  "category": "kriti-blocks",
+  "icon": "editor-paragraph",
+  "description": "Paragraph text with full typography controls.",
+  "example": {},
+  "keywords": [
+    "text",
+    "paragraph",
+    "content"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": "p,div,span",
+      "default": ""
+    },
+    "tagType": {
+      "type": "string",
+      "default": "p"
+    },
+    "contentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "fontSize": {
+      "type": "number",
+      "default": ""
+    },
+    "fontWeight": {
+      "type": "string",
+      "default": ""
+    },
+    "textAlign": {
+      "type": "string",
+      "default": ""
+    },
+    "textTransform": {
+      "type": "string",
+      "default": ""
+    },
+    "letterSpacing": {
+      "type": "string",
+      "default": ""
+    },
+    "lineHeight": {
+      "type": "string",
+      "default": ""
+    },
+    "dropCap": {
+      "type": "boolean",
+      "default": false
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    },
+    "fontFamily": {
+      "type": "string",
+      "enum": [
+        "sans",
+        "serif",
+        "mono",
+        "custom"
+      ]
+    },
+    "fontFamilyCustom": {
+      "type": "string"
+    },
+    "textShadow": {
+      "type": "string",
+      "enum": [
+        "soft",
+        "medium",
+        "strong",
+        "glow"
+      ]
+    },
+    "columns": {
+      "type": "number"
+    },
+    "columnGap": {
+      "type": "number"
+    },
+    "maxWidth": {
+      "type": "number"
+    },
+    "maxWidthUnit": {
+      "type": "string",
+      "enum": [
+        "px",
+        "%",
+        "em",
+        "ch"
+      ]
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

@@ -1,0 +1,158 @@
+.wp-block-kriti-blocks-offcanvas {
+	--bw-oc-trigger-bg: #4f46e5;
+	--bw-oc-trigger-color: #fff;
+	--bw-oc-width: 320px;
+	--bw-oc-panel-bg: #fff;
+
+	.bw-offcanvas__trigger {
+		display: none;
+		align-items: center;
+		justify-content: center;
+		padding: 12px 24px;
+		background-color: var( --bw-oc-trigger-bg );
+		border: none;
+		border-radius: 6px;
+		color: var( --bw-oc-trigger-color );
+		font-size: 16px;
+		font-weight: 600;
+		cursor: pointer;
+
+		&:focus-visible {
+			outline: 2px solid var( --bw-oc-trigger-bg );
+			outline-offset: 2px;
+		}
+	}
+
+	&.bw-offcanvas--js .bw-offcanvas__trigger {
+		display: inline-flex;
+	}
+
+	// Opened only from a CSS selector.
+	&.bw-offcanvas--no-trigger .bw-offcanvas__trigger {
+		display: none !important;
+	}
+
+	// Icon-only button; the text stays as the accessible name.
+	&.bw-offcanvas--hamburger .bw-offcanvas__trigger {
+		width: 44px;
+		height: 44px;
+		padding: 0;
+		font-size: 0;
+
+		&::before {
+			content: '';
+			display: block;
+			width: 22px;
+			height: 2px;
+			background-color: currentColor;
+			border-radius: 2px;
+			box-shadow: 0 -7px 0 currentColor, 0 7px 0 currentColor;
+		}
+	}
+
+	.bw-offcanvas__overlay {
+		position: fixed;
+		inset: 0;
+		z-index: 100000;
+		background-color: var( --bw-oc-overlay, rgba( 0, 0, 0, 0.55 ) );
+		-webkit-backdrop-filter: blur( var( --bw-oc-blur ) );
+		backdrop-filter: blur( var( --bw-oc-blur ) );
+	}
+
+	.bw-offcanvas__overlay[hidden] {
+		display: none;
+	}
+
+	.bw-offcanvas__panel {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		max-width: var( --bw-oc-width );
+		padding: 28px;
+		overflow-y: auto;
+		background-color: var( --bw-oc-panel-bg );
+		box-shadow: 0 0 40px rgba( 0, 0, 0, 0.25 );
+		transition: transform var( --bw-oc-speed, 0.3s ) ease;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	.bw-offcanvas__close {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 36px;
+		height: 36px;
+		padding: 0;
+		background-color: transparent;
+		border: none;
+		border-radius: 50%;
+		color: #1e293b;
+		font-size: 24px;
+		line-height: 1;
+		cursor: pointer;
+
+		&:hover {
+			background-color: rgba( 0, 0, 0, 0.06 );
+		}
+
+		&:focus-visible {
+			outline: 2px solid var( --bw-oc-trigger-bg );
+			outline-offset: 2px;
+		}
+	}
+
+	&.bw-offcanvas--right {
+		.bw-offcanvas__panel {
+			right: 0;
+			transform: translateX( 100% );
+		}
+
+		&.bw-offcanvas--open .bw-offcanvas__panel {
+			transform: none;
+		}
+	}
+
+	&.bw-offcanvas--left {
+		.bw-offcanvas__panel {
+			left: 0;
+			transform: translateX( -100% );
+		}
+
+		&.bw-offcanvas--open .bw-offcanvas__panel {
+			transform: none;
+		}
+	}
+}
+
+@media ( max-width: 1024px ) {
+	.wp-block-kriti-blocks-offcanvas .bw-offcanvas__panel {
+		max-width: var( --bw-oc-width-tablet, var( --bw-oc-width ) );
+	}
+}
+
+@media ( max-width: 767px ) {
+	.wp-block-kriti-blocks-offcanvas .bw-offcanvas__panel {
+		max-width: var(
+			--bw-oc-width-mobile,
+			var( --bw-oc-width-tablet, var( --bw-oc-width ) )
+		);
+	}
+}
+
+@media ( prefers-reduced-motion: reduce ) {
+	.wp-block-kriti-blocks-offcanvas .bw-offcanvas__panel {
+		transition: none;
+	}
+}
+
+html.bw-offcanvas-lock,
+body.bw-offcanvas-lock {
+	overflow: hidden;
+}

@@ -1,0 +1,98 @@
+// Minimal Bootstrap-compatible grid, scoped to the columns block so it works
+// on sites whose theme does not load Bootstrap. If the theme does, the rules
+// agree with it.
+.wp-block-kriti-blocks-columns {
+	> .row {
+		--kb-gx: var( --bs-gutter-x, 1.5rem );
+		--kb-gy: var( --bs-gutter-y, 0px );
+
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: calc( var( --kb-gy ) * -1 );
+		margin-right: calc( var( --kb-gx ) * -0.5 );
+		margin-left: calc( var( --kb-gx ) * -0.5 );
+
+		> * {
+			flex-shrink: 0;
+			box-sizing: border-box;
+			width: 100%;
+			max-width: 100%;
+			margin-top: var( --kb-gy );
+			padding-right: calc( var( --kb-gx ) * 0.5 );
+			padding-left: calc( var( --kb-gx ) * 0.5 );
+		}
+
+		@for $i from 1 through 12 {
+			> .col-#{$i} {
+				flex: 0 0 auto;
+				width: calc( #{ $i } * 100% / 12 );
+			}
+		}
+
+		> .col-2-4 {
+			flex: 0 0 auto;
+			width: 20%;
+		}
+	}
+
+	// Alignment of the columns inside the row.
+	&.kb-columns--align-start > .row {
+		align-items: flex-start;
+	}
+
+	&.kb-columns--align-center > .row {
+		align-items: center;
+	}
+
+	&.kb-columns--align-end > .row {
+		align-items: flex-end;
+	}
+
+	&.kb-columns--justify-center > .row {
+		justify-content: center;
+	}
+
+	&.kb-columns--justify-end > .row {
+		justify-content: flex-end;
+	}
+
+	&.kb-columns--justify-between > .row {
+		justify-content: space-between;
+	}
+
+	&.kb-columns--justify-around > .row {
+		justify-content: space-around;
+	}
+
+	&.kb-columns--reverse > .row {
+		flex-direction: row-reverse;
+	}
+}
+
+// Stack the columns on tablets and phones. A column with its own width for
+// that screen size (kb-col-t-* / kb-col-m-*) keeps it.
+@media ( max-width: 1024px ) {
+	.wp-block-kriti-blocks-columns.kb-columns--stack-tablet > .row {
+		> :not( [class*='kb-col-t-'] ):not( [class*='kb-col-m-'] ) {
+			flex: 0 0 100%;
+			width: 100%;
+		}
+	}
+
+	.wp-block-kriti-blocks-columns.kb-columns--stack-tablet.kb-columns--stack-reverse > .row {
+		flex-direction: column-reverse;
+	}
+}
+
+@media ( max-width: 767px ) {
+	.wp-block-kriti-blocks-columns.kb-columns--stack-mobile > .row {
+		> :not( [class*='kb-col-m-'] ) {
+			flex: 0 0 100%;
+			width: 100%;
+		}
+	}
+
+	.wp-block-kriti-blocks-columns.kb-columns--stack-mobile.kb-columns--stack-reverse > .row {
+		flex-direction: column-reverse;
+	}
+}

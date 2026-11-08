@@ -1,0 +1,106 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/testimonial",
+  "version": "0.1.0",
+  "title": "BW Testimonial",
+  "category": "kriti-blocks",
+  "icon": "format-quote",
+  "description": "A customer quote with optional avatar, author name, and role.",
+  "example": {},
+  "keywords": [
+    "testimonial",
+    "quote",
+    "review",
+    "social proof"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "quote": {
+      "type": "string",
+      "default": ""
+    },
+    "authorName": {
+      "type": "string",
+      "default": ""
+    },
+    "authorRole": {
+      "type": "string",
+      "default": ""
+    },
+    "avatarUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "avatarId": {
+      "type": "number",
+      "default": 0
+    },
+    "avatarAlt": {
+      "type": "string",
+      "default": ""
+    },
+    "testimonialAlign": {
+      "type": "string",
+      "default": "left"
+    },
+    "showQuoteMark": {
+      "type": "boolean",
+      "default": true
+    },
+    "rating": {
+      "type": "number"
+    },
+    "ratingColor": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    },
+    "logoUrl": {
+      "type": "string"
+    },
+    "logoId": {
+      "type": "number"
+    },
+    "logoAlt": {
+      "type": "string"
+    },
+    "avatarPosition": {
+      "type": "string",
+      "enum": [
+        "left",
+        "top",
+        "right"
+      ]
+    },
+    "avatarShape": {
+      "type": "string",
+      "enum": [
+        "round",
+        "square"
+      ]
+    },
+    "accentColor": {
+      "type": "string"
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

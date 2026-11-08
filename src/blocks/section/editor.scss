@@ -1,0 +1,42 @@
+// .wp-block-kriti-blocks-section {
+//   border: 1px dashed !important;
+//   padding: 0px;
+// }
+
+// .wp-block-kriti-blocks-section.is-selected {
+//     border: 1px solid;
+//     padding: 0 !important;
+// }
+
+// .wp-block-kriti-blocks-section::after {
+//     content: attr(data-title) !important;
+//     position: absolute !important;
+//     top: -20px !important;
+//     left: unset !important;
+//     right: 0px !important;
+//     background: #1e1e1e;
+//     color: #fff;
+//     font-size: 12px;
+//     border-radius: 4px;
+//     white-space: nowrap;
+//     z-index: 10;
+//     width: auto;
+//     height: 18px;
+//     padding: 2px 4px;
+//   }
+
+.wp-block-kriti-blocks-section {
+  position: relative;
+
+  .container,
+  .container-fluid {
+    margin: 0;
+    padding: 0;
+  }
+
+  .row,
+  .row > * {
+    padding: 0;
+    margin: 0;
+  }
+}

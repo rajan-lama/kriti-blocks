@@ -1,0 +1,184 @@
+.wp-block-kriti-blocks-modal {
+	--bw-modal-trigger-bg: #4f46e5;
+	--bw-modal-trigger-color: #fff;
+	--bw-modal-width: 560px;
+	--bw-modal-panel-bg: #fff;
+	--bw-modal-radius: 12px;
+
+	.bw-modal__trigger {
+		display: none;
+		align-items: center;
+		justify-content: center;
+		padding: 12px 24px;
+		background-color: var( --bw-modal-trigger-bg );
+		border: none;
+		border-radius: 6px;
+		color: var( --bw-modal-trigger-color );
+		font-size: 16px;
+		font-weight: 600;
+		cursor: pointer;
+
+		&:focus-visible {
+			outline: 2px solid var( --bw-modal-trigger-bg );
+			outline-offset: 2px;
+		}
+	}
+
+	&.bw-modal--js .bw-modal__trigger {
+		display: inline-flex;
+	}
+
+	// Opened only by an automatic trigger or a CSS selector.
+	&.bw-modal--no-trigger .bw-modal__trigger {
+		display: none !important;
+	}
+
+	.bw-modal__overlay {
+		position: fixed;
+		inset: 0;
+		z-index: 100000;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 24px;
+		background-color: var( --bw-modal-overlay, rgba( 0, 0, 0, 0.55 ) );
+		-webkit-backdrop-filter: blur( var( --bw-modal-blur ) );
+		backdrop-filter: blur( var( --bw-modal-blur ) );
+	}
+
+	.bw-modal__overlay[hidden] {
+		display: none;
+	}
+
+	.bw-modal__panel {
+		position: relative;
+		width: 100%;
+		max-width: var( --bw-modal-width );
+		max-height: var( --bw-modal-max-h, calc( 100vh - 48px ) );
+		padding: 28px;
+		overflow-y: auto;
+		background-color: var( --bw-modal-panel-bg );
+		border-radius: var( --bw-modal-radius );
+		box-shadow: 0 20px 50px rgba( 0, 0, 0, 0.3 );
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	.bw-modal__close {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 36px;
+		height: 36px;
+		padding: 0;
+		background-color: transparent;
+		border: none;
+		border-radius: 50%;
+		color: #1e293b;
+		font-size: 24px;
+		line-height: 1;
+		cursor: pointer;
+
+		&:hover {
+			background-color: rgba( 0, 0, 0, 0.06 );
+		}
+
+		&:focus-visible {
+			outline: 2px solid var( --bw-modal-trigger-bg );
+			outline-offset: 2px;
+		}
+	}
+
+	&.bw-modal--bottom {
+		.bw-modal__overlay {
+			align-items: flex-end;
+			padding: 0;
+		}
+
+		.bw-modal__panel {
+			max-width: none;
+			max-height: var( --bw-modal-max-h, 85vh );
+			border-radius: var( --bw-modal-radius ) var( --bw-modal-radius ) 0 0;
+		}
+	}
+}
+
+@media ( prefers-reduced-motion: no-preference ) {
+	.bw-modal--open .bw-modal__panel {
+		animation: bw-modal-in 0.2s ease;
+	}
+}
+
+@media ( prefers-reduced-motion: no-preference ) {
+	.wp-block-kriti-blocks-modal.bw-modal--anim-fade.bw-modal--open .bw-modal__panel {
+		animation: bw-modal-fade 0.25s ease;
+	}
+
+	.wp-block-kriti-blocks-modal.bw-modal--anim-zoom.bw-modal--open .bw-modal__panel {
+		animation: bw-modal-zoom 0.25s ease;
+	}
+
+	.wp-block-kriti-blocks-modal.bw-modal--anim-slide.bw-modal--open .bw-modal__panel {
+		animation: bw-modal-slide 0.3s ease;
+	}
+}
+
+.wp-block-kriti-blocks-modal.bw-modal--anim-none.bw-modal--open .bw-modal__panel {
+	animation: none;
+}
+
+@keyframes bw-modal-fade {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes bw-modal-zoom {
+	from {
+		opacity: 0;
+		transform: scale( 0.9 );
+	}
+
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes bw-modal-slide {
+	from {
+		opacity: 0;
+		transform: translateY( 48px );
+	}
+
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes bw-modal-in {
+	from {
+		opacity: 0;
+		transform: translateY( 8px );
+	}
+
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+html.bw-modal-lock,
+body.bw-modal-lock {
+	overflow: hidden;
+}

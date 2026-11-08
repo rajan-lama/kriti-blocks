@@ -1,0 +1,39 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+/* .block-editor-block-card {
+    background: #a1cdff;
+} */
+/* Target the block editor container */
+/* .editor-styles-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.editor-styles-wrapper
+  :where(:not(.is-layout-flex, .is-layout-grid))
+  > .wp-block {
+  border: 1px dashed lightblue;
+  padding: 10px 0;
+}
+
+.components-tab-panel__tabs-item {
+  display: flex;
+  flex-direction: column;
+
+  &.active-tab {
+    background-color: #f0f0f0;
+    border-bottom: 5px solid #0073aa;
+  }
+} */
+
+/* For a smaller viewport */
+/* @media (max-width: 768px) {
+    .editor-styles-wrapper {
+        max-width: 100%;
+        padding: 10px;
+    }
+} */

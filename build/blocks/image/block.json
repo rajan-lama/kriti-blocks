@@ -1,0 +1,134 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/image",
+  "version": "0.1.0",
+  "title": "BW Image",
+  "category": "kriti-blocks",
+  "icon": "format-image",
+  "description": "An image with sizing, cropping, alignment, and caption controls.",
+  "example": {},
+  "keywords": [
+    "image",
+    "picture",
+    "photo",
+    "media"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "url": {
+      "type": "string",
+      "default": ""
+    },
+    "id": {
+      "type": "number",
+      "default": 0
+    },
+    "alt": {
+      "type": "string",
+      "default": ""
+    },
+    "imageWidth": {
+      "type": "number",
+      "default": ""
+    },
+    "imageHeight": {
+      "type": "number",
+      "default": ""
+    },
+    "objectFit": {
+      "type": "string",
+      "default": ""
+    },
+    "borderRadius": {
+      "type": "number",
+      "default": ""
+    },
+    "imageAlign": {
+      "type": "string",
+      "default": ""
+    },
+    "caption": {
+      "type": "string",
+      "source": "html",
+      "selector": "figcaption",
+      "default": ""
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    },
+    "linkType": {
+      "type": "string",
+      "enum": [
+        "media",
+        "custom",
+        "lightbox"
+      ]
+    },
+    "linkUrl": {
+      "type": "string"
+    },
+    "linkNewTab": {
+      "type": "boolean"
+    },
+    "linkNofollow": {
+      "type": "boolean"
+    },
+    "hoverEffect": {
+      "type": "string",
+      "enum": [
+        "zoom",
+        "lift",
+        "grayscale",
+        "brighten"
+      ]
+    },
+    "aspectRatio": {
+      "type": "string",
+      "enum": [
+        "1/1",
+        "4/3",
+        "3/2",
+        "16/9",
+        "21/9",
+        "3/4",
+        "2/3"
+      ]
+    },
+    "focalPoint": {
+      "type": "object"
+    },
+    "captionPosition": {
+      "type": "string",
+      "enum": [
+        "overlay"
+      ]
+    },
+    "imageShape": {
+      "type": "string",
+      "enum": [
+        "circle",
+        "rounded",
+        "hexagon",
+        "diamond",
+        "blob"
+      ]
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

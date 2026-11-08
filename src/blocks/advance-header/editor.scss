@@ -1,0 +1,19 @@
+.wp-block-kriti-blocks-advance-header {
+	.kb-ah-editor__title {
+		display: flow-root;
+	}
+
+	&.kb-ah--boxed .kb-ah-editor__title {
+		padding: 0.4em 0.75em;
+	}
+
+	.kb-ah-editor__text {
+		display: inline;
+		margin: 0;
+	}
+
+	.kb-ah__sub {
+		margin: 0.35em 0 0;
+		opacity: 0.8;
+	}
+}

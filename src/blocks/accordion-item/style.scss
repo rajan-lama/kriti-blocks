@@ -1,0 +1,110 @@
+.wp-block-kriti-blocks-accordion-item {
+	margin: 0;
+	background-color: var(--kb-d-bg, #ffffff);
+	border: 1px solid var(--kb-d-border, #e5e7eb);
+	border-radius: var(--kb-d-radius, 0);
+	overflow: hidden;
+
+	.bw-accordion-title {
+		margin: 0;
+	}
+
+	.bw-accordion-trigger {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		gap: 16px;
+		padding: 18px 20px;
+		margin: 0;
+		border: none;
+		border-radius: 0;
+		background: none;
+		color: var(--kb-d-title, inherit);
+		font: inherit;
+		text-align: left;
+		cursor: pointer;
+
+		&:hover {
+			background: var(--kb-d-hover-bg, none);
+		}
+
+		&:focus-visible {
+			outline: 2px solid currentColor;
+			outline-offset: -2px;
+		}
+	}
+
+	.bw-accordion-title-text {
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 1.4;
+	}
+
+	.bw-accordion-icon {
+		flex-shrink: 0;
+		width: 10px;
+		height: 10px;
+		border-right: 2px solid var(--kb-d-icon, #6b7280);
+		border-bottom: 2px solid var(--kb-d-icon, #6b7280);
+		transform: rotate( 45deg );
+		transition: transform 0.2s ease;
+		margin-top: -4px;
+	}
+
+	.bw-accordion-panel {
+		padding: 0 20px 20px;
+	}
+
+	&.is-open .bw-accordion-icon {
+		transform: rotate( -135deg );
+		margin-top: 4px;
+	}
+
+	&.is-open {
+		background-color: var(--kb-d-open-bg, var(--kb-d-bg, #ffffff));
+	}
+}
+
+// Icon variants and position, set by classes on the parent accordion.
+.kb-d--icon-none .wp-block-kriti-blocks-accordion-item .bw-accordion-icon {
+	display: none;
+}
+
+.kb-d--icon-plus .wp-block-kriti-blocks-accordion-item .bw-accordion-icon {
+	width: 12px;
+	height: 12px;
+	margin-top: 0;
+	border: 0;
+	transform: none;
+	background:
+		linear-gradient( var(--kb-d-icon, #6b7280), var(--kb-d-icon, #6b7280) ) center / 100% 2px no-repeat,
+		linear-gradient( var(--kb-d-icon, #6b7280), var(--kb-d-icon, #6b7280) ) center / 2px 100% no-repeat;
+}
+
+.kb-d--icon-plus .wp-block-kriti-blocks-accordion-item.is-open .bw-accordion-icon {
+	margin-top: 0;
+	transform: none;
+	background:
+		linear-gradient( var(--kb-d-icon, #6b7280), var(--kb-d-icon, #6b7280) ) center / 100% 2px no-repeat;
+}
+
+.kb-d--icon-caret .wp-block-kriti-blocks-accordion-item .bw-accordion-icon {
+	width: 0;
+	height: 0;
+	margin-top: 0;
+	border-style: solid;
+	border-width: 6px 5px 0;
+	border-color: var(--kb-d-icon, #6b7280) transparent transparent;
+	transform: none;
+}
+
+.kb-d--icon-caret .wp-block-kriti-blocks-accordion-item.is-open .bw-accordion-icon {
+	margin-top: 0;
+	transform: rotate( 180deg );
+}
+
+.kb-d--icon-left .wp-block-kriti-blocks-accordion-item .bw-accordion-trigger {
+	flex-direction: row-reverse;
+	justify-content: flex-end;
+}

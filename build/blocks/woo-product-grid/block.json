@@ -1,0 +1,156 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kriti-blocks/woo-product-grid",
+  "version": "0.1.0",
+  "title": "BW Product Grid",
+  "category": "kriti-blocks",
+  "icon": "products",
+  "description": "A grid or list of WooCommerce products. Requires WooCommerce.",
+  "example": {},
+  "keywords": [
+    "woocommerce",
+    "products",
+    "shop",
+    "store",
+    "grid"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "perPage": {
+      "type": "number",
+      "default": 6
+    },
+    "columns": {
+      "type": "number",
+      "default": 3
+    },
+    "layout": {
+      "type": "string",
+      "default": "grid"
+    },
+    "orderBy": {
+      "type": "string",
+      "default": "date"
+    },
+    "order": {
+      "type": "string",
+      "default": "DESC"
+    },
+    "categoryIds": {
+      "type": "array",
+      "default": []
+    },
+    "featuredOnly": {
+      "type": "boolean",
+      "default": false
+    },
+    "onSaleOnly": {
+      "type": "boolean",
+      "default": false
+    },
+    "showImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "showCategory": {
+      "type": "boolean",
+      "default": false
+    },
+    "showRating": {
+      "type": "boolean",
+      "default": true
+    },
+    "showPrice": {
+      "type": "boolean",
+      "default": true
+    },
+    "showAddToCart": {
+      "type": "boolean",
+      "default": true
+    },
+    "tagIds": {
+      "type": "array",
+      "default": []
+    },
+    "stockStatus": {
+      "type": "string",
+      "default": ""
+    },
+    "minPrice": {
+      "type": "number",
+      "default": 0
+    },
+    "maxPrice": {
+      "type": "number",
+      "default": 0
+    },
+    "includeIds": {
+      "type": "array",
+      "default": []
+    },
+    "excludeIds": {
+      "type": "array",
+      "default": []
+    },
+    "offset": {
+      "type": "number",
+      "default": 0
+    },
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSaleBadge": {
+      "type": "boolean",
+      "default": true
+    },
+    "imageHover": {
+      "type": "boolean",
+      "default": false
+    },
+    "buttonStyle": {
+      "type": "string",
+      "default": "default"
+    },
+    "cardStyle": {
+      "type": "string",
+      "default": "default"
+    },
+    "imageRatio": {
+      "type": "string",
+      "default": "square"
+    },
+    "columnsTablet": {
+      "type": "number",
+      "default": 0
+    },
+    "columnsMobile": {
+      "type": "number",
+      "default": 0
+    },
+    "noResultsMessage": {
+      "type": "string",
+      "default": ""
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "kriti-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}
