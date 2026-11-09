@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- Included inside a render callback, so these variables are local, not global.
 /**
  * Server render for the BW Related Posts block.
  *
@@ -43,7 +44,7 @@ $current_id = 0;
 if ( ! empty( $block->context['postId'] ) ) {
 	$current_id = absint( $block->context['postId'] );
 } elseif ( isset( $_GET['post_id'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-	$current_id = absint( wp_unslash( $_GET['post_id'] ) );
+	$current_id = absint( wp_unslash( $_GET['post_id'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 } elseif ( get_the_ID() ) {
 	$current_id = absint( get_the_ID() );
 }
@@ -164,11 +165,11 @@ $query_args = array(
 );
 
 if ( $current_id ) {
-	$query_args['post__not_in'] = array( $current_id );
+	$query_args['post__not_in'] = array( $current_id ); // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_post__not_in -- Bounded exclusion list.
 }
 
 if ( ! empty( $exclude_ids ) ) {
-	$query_args['post__not_in'] = array_merge( isset( $query_args['post__not_in'] ) ? $query_args['post__not_in'] : array(), $exclude_ids );
+	$query_args['post__not_in'] = array_merge( isset( $query_args['post__not_in'] ) ? $query_args['post__not_in'] : array(), $exclude_ids ); // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_post__not_in -- Bounded exclusion list.
 }
 
 if ( ! empty( $manual_ids ) ) {

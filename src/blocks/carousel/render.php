@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- Included inside a render callback, so these variables are local, not global.
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
@@ -9,7 +10,7 @@ if ( ! defined( 'WPINC' ) ) {
  * ----------------------------------------
  */
 $attributes = apply_filters(
-	'bw_slider_block_attributes',
+	'kriti_blocks_slider_block_attributes',
 	$attributes,
 	$content
 );
@@ -101,7 +102,7 @@ if ( '' !== $extra_style ) {
  * ----------------------------------------
  */
 $slides = apply_filters(
-	'bw_slider_slides',
+	'kriti_blocks_slider_slides',
 	$slides,
 	$attributes
 );
@@ -123,7 +124,7 @@ if ( $multi ) {
 }
 
 $carousel_class = apply_filters(
-	'bw_slider_carousel_class',
+	'kriti_blocks_slider_carousel_class',
 	$carousel_class,
 	$attributes
 );
@@ -141,7 +142,7 @@ $slide_count = is_array( $slides ) ? count( $slides ) : 0;
  * ----------------------------------------
  */
 $slider_id = apply_filters(
-	'bw_slider_id',
+	'kriti_blocks_slider_id',
 	'slider-' . uniqid(),
 	$attributes
 );
@@ -197,7 +198,7 @@ ob_start();
 	data-bs-interval="<?php echo esc_attr($interval); ?>"<?php echo $extra_data; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Built above from fixed attribute names and an esc_attr()'d style. ?>>
 <?php endif; ?>
 
-	<?php do_action('bw_slider_before_inner', $attributes); ?>
+	<?php do_action('kriti_blocks_slider_before_inner', $attributes); ?>
 
 	<?php echo $multi ? '<div class="kb-carousel__viewport"><div class="kb-carousel__track">' : '<div class="carousel-inner">'; ?>
 
@@ -209,7 +210,7 @@ ob_start();
 			 * ----------------------------------------
 			 */
 			$slide = apply_filters(
-				'bw_slider_single_slide',
+				'kriti_blocks_slider_single_slide',
 				$slide,
 				$index,
 				$attributes
@@ -237,7 +238,7 @@ ob_start();
 		?>
 		<div class="<?php echo esc_attr( trim( ( $multi ? 'kb-carousel__slide' : 'carousel-item ' . ( $index === 0 ? 'active' : '' ) ) . $slide_class ) ); ?>"<?php echo '' !== $slide_style ? ' style="' . esc_attr( $slide_style ) . '"' : ''; ?>>
 
-			<?php do_action('bw_slider_before_slide', $slide, $index, $attributes); ?>
+			<?php do_action('kriti_blocks_slider_before_slide', $slide, $index, $attributes); ?>
 
 			<img src="<?php echo esc_attr($slide['image'] ?? ''); ?>" alt="<?php echo esc_attr($slide['alt'] ?? ''); ?>">
 
@@ -276,7 +277,7 @@ ob_start();
 					);
 
 					echo wp_kses_post( apply_filters(
-						'bw_slider_primary_button',
+						'kriti_blocks_slider_primary_button',
 						$primary_btn,
 						$slide,
 						$attributes
@@ -297,7 +298,7 @@ ob_start();
 					);
 
 					echo wp_kses_post( apply_filters(
-						'bw_slider_secondary_button',
+						'kriti_blocks_slider_secondary_button',
 						$secondary_btn,
 						$slide,
 						$attributes
@@ -307,7 +308,7 @@ ob_start();
 
 			</div>
 
-			<?php do_action('bw_slider_after_slide', $slide, $index, $attributes); ?>
+			<?php do_action('kriti_blocks_slider_after_slide', $slide, $index, $attributes); ?>
 
 		</div>
 
@@ -320,7 +321,7 @@ ob_start();
 			$slide_html = ob_get_clean();
 
 			echo wp_kses_post( apply_filters(
-				'bw_slider_slide_html',
+				'kriti_blocks_slider_slide_html',
 				$slide_html,
 				$slide,
 				$index,
@@ -331,7 +332,7 @@ ob_start();
 
 	<?php echo $multi ? '</div></div>' : '</div>'; ?>
 
-	<?php do_action('bw_slider_after_inner', $attributes); echo $thumbs_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Built above only from esc_attr() and esc_url() values. ?>
+	<?php do_action('kriti_blocks_slider_after_inner', $attributes); echo $thumbs_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Built above only from esc_attr() and esc_url() values. ?>
 
 	<?php if ( $multi ) : ?>
 		<?php if ( $showControls ) : ?>
@@ -389,7 +390,7 @@ ob_start();
 $html = ob_get_clean();
 
 echo wp_kses_post( apply_filters(
-	'bw_slider_output',
+	'kriti_blocks_slider_output',
 	$html,
 	$attributes,
 	$slides

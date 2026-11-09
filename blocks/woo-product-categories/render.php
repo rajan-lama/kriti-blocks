@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- Included inside a render callback, so these variables are local, not global.
 /**
  * Server render for the BW Product Categories block.
  *
@@ -93,7 +94,7 @@ if ( ! empty( $include_ids ) ) {
 }
 
 if ( ! empty( $exclude_ids ) ) {
-	$query_args['exclude'] = array_values( array_unique( $exclude_ids ) );
+	$query_args['exclude'] = array_values( array_unique( $exclude_ids ) ); // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- Bounded exclusion list.
 }
 
 if ( 'top' === $parent_filter ) {

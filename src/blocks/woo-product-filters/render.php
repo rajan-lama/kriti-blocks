@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- Included inside a render callback, so these variables are local, not global.
 /**
  * Server render for the BW Product Filters block.
  *
@@ -105,14 +106,14 @@ foreach ( array_keys( $attribute_slugs ) as $attribute_slug ) {
 $current_rating = '';
 
 if ( isset( $_GET['rating_filter'] ) && is_string( $_GET['rating_filter'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-	$rating_values  = array_filter( array_map( 'absint', explode( ',', wp_unslash( $_GET['rating_filter'] ) ) ), static function ( $value ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+	$rating_values  = array_filter( array_map( 'absint', explode( ',', sanitize_text_field( wp_unslash( $_GET['rating_filter'] ) ) ) ), static function ( $value ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		return $value >= 1 && $value <= 5;
 	} );
 	$current_rating = implode( ',', array_unique( $rating_values ) );
 }
 
-$current_min = isset( $_GET['min_price'] ) && is_scalar( $_GET['min_price'] ) && is_numeric( wp_unslash( $_GET['min_price'] ) ) ? max( 0, (float) wp_unslash( $_GET['min_price'] ) ) : 0; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-$current_max = isset( $_GET['max_price'] ) && is_scalar( $_GET['max_price'] ) && is_numeric( wp_unslash( $_GET['max_price'] ) ) ? max( 0, (float) wp_unslash( $_GET['max_price'] ) ) : 0; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+$current_min = isset( $_GET['min_price'] ) && is_scalar( $_GET['min_price'] ) && is_numeric( sanitize_text_field( wp_unslash( $_GET['min_price'] ) ) ) ? max( 0, (float) sanitize_text_field( wp_unslash( $_GET['min_price'] ) ) ) : 0; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+$current_max = isset( $_GET['max_price'] ) && is_scalar( $_GET['max_price'] ) && is_numeric( sanitize_text_field( wp_unslash( $_GET['max_price'] ) ) ) ? max( 0, (float) sanitize_text_field( wp_unslash( $_GET['max_price'] ) ) ) : 0; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
 /*
  * Builds a link that keeps the current filters and applies $changes

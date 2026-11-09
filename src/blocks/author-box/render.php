@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- Included inside a render callback, so these variables are local, not global.
 /**
  * Server render for the BW Author Box block.
  *
@@ -25,7 +26,7 @@ if ( ! $author_id ) {
 	if ( ! empty( $block->context['postId'] ) ) {
 		$current_id = absint( $block->context['postId'] );
 	} elseif ( isset( $_GET['post_id'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-		$current_id = absint( wp_unslash( $_GET['post_id'] ) );
+		$current_id = absint( wp_unslash( $_GET['post_id'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 	} elseif ( get_the_ID() ) {
 		$current_id = absint( get_the_ID() );
 	}

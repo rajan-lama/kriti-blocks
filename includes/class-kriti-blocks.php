@@ -78,7 +78,6 @@ class Kriti_Blocks {
 		$this->plugin_name = 'kriti-blocks';
 
 		$this->load_dependencies();
-		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
 
@@ -90,7 +89,6 @@ class Kriti_Blocks {
 	 * Include the following files that make up the plugin:
 	 *
 	 * - Kriti_Blocks_Loader. Orchestrates the hooks of the plugin.
-	 * - Kriti_Blocks_i18n. Defines internationalization functionality.
 	 * - Kriti_Blocks_Admin. Defines all hooks for the admin area.
 	 * - Kriti_Blocks_Public. Defines all hooks for the public side of the site.
 	 *
@@ -109,12 +107,6 @@ class Kriti_Blocks {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-kriti-blocks-loader.php';
 
 		/**
-		 * The class responsible for defining internationalization functionality
-		 * of the plugin.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-kriti-blocks-i18n.php';
-
-		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-kriti-blocks-admin.php';
@@ -126,23 +118,6 @@ class Kriti_Blocks {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-kriti-blocks-public.php';
 
 		$this->loader = new Kriti_Blocks_Loader();
-
-	}
-
-	/**
-	 * Define the locale for this plugin for internationalization.
-	 *
-	 * Uses the Kriti_Blocks_i18n class in order to set the domain and to register the hook
-	 * with WordPress.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 */
-	private function set_locale() {
-
-		$plugin_i18n = new Kriti_Blocks_i18n();
-
-		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
 	}
 

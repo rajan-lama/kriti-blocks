@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- Included inside a render callback, so these variables are local, not global.
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
@@ -10,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @param mixed $value Candidate color.
  * @return string Safe color or an empty string.
  */
-function bw_icon_safe_color( $value ) {
+function kriti_blocks_icon_safe_color( $value ) {
     if ( ! is_string( $value ) ) {
         return '';
     }
@@ -29,7 +30,7 @@ function bw_icon_safe_color( $value ) {
  * @param float $max   Highest allowed value.
  * @return int|null
  */
-function bw_icon_num( $value, $min, $max ) {
+function kriti_blocks_icon_num( $value, $min, $max ) {
     if ( '' === $value || null === $value || ! is_numeric( $value ) ) {
         return null;
     }
@@ -43,26 +44,26 @@ function bw_icon_num( $value, $min, $max ) {
  * @param array $attributes Block attributes.
  * @return array
  */
-function bw_icon_extras( $attributes ) {
+function kriti_blocks_icon_extras( $attributes ) {
     $classes = array();
     $style   = '';
 
-    $hover_color = bw_icon_safe_color( $attributes['hoverColor'] ?? '' );
+    $hover_color = kriti_blocks_icon_safe_color( $attributes['hoverColor'] ?? '' );
     if ( $hover_color ) {
         $style .= '--bw-icon-hover-color:' . $hover_color . ';';
     }
-    $hover_bg = bw_icon_safe_color( $attributes['hoverBg'] ?? '' );
+    $hover_bg = kriti_blocks_icon_safe_color( $attributes['hoverBg'] ?? '' );
     if ( $hover_bg ) {
         $style .= '--bw-icon-hover-bg:' . $hover_bg . ';';
     }
 
-    $rotation = bw_icon_num( $attributes['rotation'] ?? null, -360, 360 );
+    $rotation = kriti_blocks_icon_num( $attributes['rotation'] ?? null, -360, 360 );
     if ( $rotation ) {
         $style .= '--bw-icon-rot:' . $rotation . 'deg;';
     }
 
-    $tablet = bw_icon_num( $attributes['sizeTablet'] ?? null, 8, 500 );
-    $mobile = bw_icon_num( $attributes['sizeMobile'] ?? null, 8, 500 );
+    $tablet = kriti_blocks_icon_num( $attributes['sizeTablet'] ?? null, 8, 500 );
+    $mobile = kriti_blocks_icon_num( $attributes['sizeMobile'] ?? null, 8, 500 );
     if ( null !== $tablet ) {
         $style .= '--bw-icon-size-t:' . $tablet . 'px;';
     }
@@ -128,7 +129,7 @@ function bw_icon_extras( $attributes ) {
  * @param array $attributes Block attributes.
  * @return string
  */
-function bw_icon_block_render_callback( $attributes ) {
+function kriti_blocks_icon_block_render_callback( $attributes ) {
 
     // Set default attributes
     $defaults = array(
@@ -149,7 +150,7 @@ function bw_icon_block_render_callback( $attributes ) {
      *
      * @param array $attributes Block attributes.
      */
-    $attributes = apply_filters( 'bw_icon_block_attributes', $attributes );
+    $attributes = apply_filters( 'kriti_blocks_icon_block_attributes', $attributes );
 
     // Prepare inline style with CSS variables
     $style = sprintf(
@@ -171,7 +172,7 @@ function bw_icon_block_render_callback( $attributes ) {
     }
 
     // Optional extras (hover colors, rotation, per-device size, label, link).
-    $extras = bw_icon_extras( $attributes );
+    $extras = kriti_blocks_icon_extras( $attributes );
     $style .= $extras['style'];
 
     if ( $extras['label'] || $extras['link_open'] ) {
@@ -201,7 +202,7 @@ function bw_icon_block_render_callback( $attributes ) {
 add_action( 'init', function() {
     if ( function_exists( 'register_block_type' ) ) {
         register_block_type( 'kriti-blocks/icon', array(
-            'render_callback' => 'bw_icon_block_render_callback',
+            'render_callback' => 'kriti_blocks_icon_block_render_callback',
         ) );
     }
 } );

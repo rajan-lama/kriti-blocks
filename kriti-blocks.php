@@ -50,7 +50,7 @@ define('KRITI_BLOCKS_URL', plugin_dir_url(__FILE__));
  * The code that runs during plugin activation.
  * This action is documented in includes/class-kriti-blocks-activator.php
  */
-function activate_kriti_blocks()
+function kriti_blocks_activate()
 {
 	require_once plugin_dir_path(__FILE__) . 'includes/class-kriti-blocks-activator.php';
 	Kriti_Blocks_Activator::activate();
@@ -60,14 +60,14 @@ function activate_kriti_blocks()
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-kriti-blocks-deactivator.php
  */
-function deactivate_kriti_blocks()
+function kriti_blocks_deactivate()
 {
 	require_once plugin_dir_path(__FILE__) . 'includes/class-kriti-blocks-deactivator.php';
 	Kriti_Blocks_Deactivator::deactivate();
 }
 
-register_activation_hook(__FILE__, 'activate_kriti_blocks');
-register_deactivation_hook(__FILE__, 'deactivate_kriti_blocks');
+register_activation_hook(__FILE__, 'kriti_blocks_activate');
+register_deactivation_hook(__FILE__, 'kriti_blocks_deactivate');
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -190,7 +190,7 @@ function kriti_blocks_category($block_categories, $editor_context)
  *
  * @since    1.0.0
  */
-function run_kriti_blocks()
+function kriti_blocks_run()
 {
 	$plugin = new Kriti_Blocks();
 	$plugin->run();
@@ -198,4 +198,4 @@ function run_kriti_blocks()
 	add_filter('block_categories_all', 'kriti_blocks_category', 10, 2);
 }
 
-run_kriti_blocks();
+kriti_blocks_run();

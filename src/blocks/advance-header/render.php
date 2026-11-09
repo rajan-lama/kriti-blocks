@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- Included inside a render callback, so these variables are local, not global.
 /**
  * Server-side render for the Advance Header block.
  *
@@ -17,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * ----------------------------------------
  */
 $attributes = apply_filters(
-	'bw_header_block_attributes',
+	'kriti_blocks_header_block_attributes',
 	$attributes,
 	$content
 );
@@ -198,7 +199,7 @@ if ( '' === $subtitle ) {
  * ----------------------------------------
  */
 echo wp_kses_post( apply_filters(
-	'bw_header_block_output',
+	'kriti_blocks_header_block_output',
 	$html,
 	$attributes
 ) );

@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- Included inside a render callback, so these variables are local, not global.
 /**
  * Server render for the BW Sale Badge block.
  *
@@ -29,7 +30,7 @@ $product_id = 0;
 if ( ! empty( $block->context['postId'] ) ) {
 	$product_id = absint( $block->context['postId'] );
 } elseif ( isset( $_GET['post_id'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-	$product_id = absint( wp_unslash( $_GET['post_id'] ) );
+	$product_id = absint( wp_unslash( $_GET['post_id'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 } elseif ( get_the_ID() ) {
 	$product_id = absint( get_the_ID() );
 }

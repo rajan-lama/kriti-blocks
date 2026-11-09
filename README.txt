@@ -1,9 +1,9 @@
 === Kriti Blocks ===
 Contributors: wpblockwriter
 Donate link: https://wpblockwriter.com/
-Tags: gutenberg, blocks, editor, page builder, layout, kriti-blocks
+Tags: gutenberg, blocks, editor, page builder, layout
 Requires at least: 6.0
-Tested up to: 6.9
+Tested up to: 7.1
 Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html

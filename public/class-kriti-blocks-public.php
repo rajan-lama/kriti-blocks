@@ -101,7 +101,7 @@ class Kriti_Blocks_Public {
     // `enqueue_block_assets` (front end and editor), so WordPress prints it once.
     wp_enqueue_script( 'bootstrap-bundle', plugin_dir_url( __FILE__ ) . 'js/bootstrap/bootstrap.bundle.min.js', array(), '5.3.3', true );
     // The old handle stays registered, without a file, for anything that depends on it.
-    wp_register_script( 'bootstrap', false, array( 'bootstrap-bundle' ), '5.3.3' );
+    wp_register_script( 'bootstrap', false, array( 'bootstrap-bundle' ), '5.3.3', true );
 		wp_enqueue_script( $this->plugin_name . '-public', plugin_dir_url( __FILE__ ) . 'js/kriti-blocks-public.js', array( 'jquery', 'bootstrap-bundle' ), $this->version, false );
 	}
 

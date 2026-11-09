@@ -1,9 +1,10 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- Included inside a render callback, so these variables are local, not global.
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
-if( ! function_exists( 'render_tabs_block' ) ) {
-function render_tabs_block( $attributes, $content, $block ) {
+if( ! function_exists( 'kriti_blocks_render_buttons_block' ) ) {
+function kriti_blocks_render_buttons_block( $attributes, $content, $block ) {
     $inner_blocks = $block->parsed_block['innerBlocks'];
 
     $nav = '<ul>';
@@ -30,5 +31,5 @@ function render_tabs_block( $attributes, $content, $block ) {
 }
 }
 
-    add_filter( 'render_block_kriti-blocks/tabs', 'render_tabs_block', 10, 3 );
+    add_filter( 'render_block_kriti-blocks/tabs', 'kriti_blocks_render_buttons_block', 10, 3 );
 

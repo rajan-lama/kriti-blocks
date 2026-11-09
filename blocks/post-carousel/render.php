@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- Included inside a render callback, so these variables are local, not global.
 /**
  * Server render for the BW Post Carousel block.
  *
@@ -160,7 +161,7 @@ if ( 'exclude' === $sticky_mode ) {
 }
 
 if ( ! empty( $not_in ) ) {
-	$query_args['post__not_in'] = $not_in;
+	$query_args['post__not_in'] = $not_in; // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_post__not_in -- Bounded exclusion list.
 }
 
 if ( '' !== $filter_taxonomy && ! empty( $filter_term_ids ) ) {

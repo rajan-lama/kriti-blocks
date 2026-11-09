@@ -114,7 +114,7 @@ final class Wishlist {
 				'orderby'          => 'post__in',
 				'fields'           => 'ids',
 				'no_found_rows'    => true,
-				'suppress_filters' => true,
+				'suppress_filters' => false,
 			)
 		);
 		return array_slice( array_map( 'intval', $found ), 0, self::MAX );

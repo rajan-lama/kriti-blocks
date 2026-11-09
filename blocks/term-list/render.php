@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- Included inside a render callback, so these variables are local, not global.
 /**
  * Server render for the BW Term List block.
  *
@@ -111,7 +112,7 @@ if ( ! empty( $include_ids ) ) {
 }
 
 if ( ! empty( $exclude_ids ) ) {
-	$query_args['exclude'] = $exclude_ids;
+	$query_args['exclude'] = $exclude_ids; // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- Bounded exclusion list.
 }
 
 if ( $top_level_only ) {
